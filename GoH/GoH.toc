@@ -1,0 +1,23 @@
+## Interface: 90005
+## Title: GoH (Core Settings)
+## Author: DJGhosts Of The Crystal Knights.
+## Additional: permission given from Maziel, the original author.
+## Version: 9.0.0010
+## Notes: Get Over Here Core Settings
+## SavedVariablesPerCharacter: SMouseTarget_Saved
+## DefaultState: Enabled
+## Dependencies: GoH_DeathKnight 
+
+GoH_SoundFiles.lua
+GoH_MenuButtons.lua
+GoH_Screen_Messages.lua
+GoH.xml
+GoH_AutoDND.lua
+GoH_EventLog.lua
+GoH_Low_Health_Warning.lua
+GoH_LowHealthFrame.xml
+GoH_MouseoverTarget.xml
+GoH_MouseoverTarget.lua
+
+
+

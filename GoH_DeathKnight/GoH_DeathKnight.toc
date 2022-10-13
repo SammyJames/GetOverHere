@@ -1,0 +1,20 @@
+## Interface: 90005
+## Title: GoH - DeathKnight
+## Author: DJGhosts Of The Crystal Knights.
+## Additional: permission given from Maziel, the original author.
+## Version: 9.0.0010
+## Notes: Get Over Here for Death Knights.
+## SavedVariablesPerCharacter: GoH_MinimapIcon, GoHv5_DeathKnight_Data
+## DefaultState: Enabled
+## Dependencies: GoH
+
+
+GoH_DeathKnight.xml
+GoH_DeathKnight_EventLog.lua
+GoH_DeathKnight_SoundFiles.lua
+GoH_DeathKnight_SavedVariables.lua
+GoH_DeathKnight_MenuButtons.lua
+GoH_Timer.lua
+GoH_Spell_DeathKnight.lua
+
+

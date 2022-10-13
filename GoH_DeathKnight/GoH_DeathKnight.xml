@@ -1,0 +1,4091 @@
+<Ui xmlns="http://www.blizzard.com/wow/ui" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<Script file="GoH_DeathKnight.lua"/>
+
+		<!-- ################################################################## -->
+		<!-- ################################################################## -->
+		<!-- ################################################################## -->
+		<!-- ################################################################## -->
+		<!-- ################################################################## -->
+		<!-- ################################################################## -->
+		<!-- ################################################################## -->
+		<!-- ################################################################## -->
+		<!-- ################################################################## -->
+		<!-- ################################################################## -->
+		<!-- ################################################################## -->
+
+<!-- TIMER FRAME -->
+  <Frame name="GoHv5_Timer_Frame">
+        <Scripts>
+            <OnUpdate>
+				GoHv5_Timer:OnUpdate(GoH_elapsedTime)
+            </OnUpdate>
+        </Scripts>
+  </Frame>
+
+		<!-- ################################################################## -->
+		<!-- ################################################################## -->
+		<!-- ################################################################## -->
+		<!-- ################################################################## -->
+		<!-- ################################################################## -->
+		<!-- ################################################################## -->
+		<!-- ################################################################## -->
+		<!-- ################################################################## -->
+		<!-- ################################################################## -->
+		<!-- ################################################################## -->
+		<!-- ################################################################## -->
+		
+	<!-- GET OVER HERE GRAPHIC -->
+  <Frame name="GoHFrame" parent="WorldFrame" setAllPoints="true"  hidden="true">
+    <Layers>
+      <Layer level="BACKGROUND">
+        <Texture name="$parentTexture" file="interface\AddOns\GoH\Images\GoH.tga" />
+      </Layer>
+    </Layers>
+  </Frame>		
+		
+		
+<!-- INTRO GRAPHIC -->
+  <Frame name="GoH_IntroFrame" parent="WorldFrame" setAllPoints="true"  hidden="true">
+    <Layers>
+      <Layer level="BACKGROUND">
+        <Texture name="$parentTexture" file="interface\AddOns\GoH\Images\GoH_Intro.tga" />
+      </Layer>
+    </Layers>
+  </Frame>
+
+		<!-- ################################################################## -->
+		<!-- ################################################################## -->
+		<!-- ################################################################## -->
+		<!-- ################################################################## -->		
+		
+<!-- TOASTY GRAPHIC -->
+  <Frame name="GoH_ToastyFrame" parent="WorldFrame" setAllPoints="true"  hidden="true">
+    <Layers>
+      <Layer level="BACKGROUND">
+        <Texture name="$parentTexture" file="interface\AddOns\GoH\Images\GoH_Toasty.tga" />
+      </Layer>
+    </Layers>
+  </Frame>		
+	
+		
+		
+		
+		
+<!-- FIGHT GRAPHIC -->
+  <Frame name="GoH_FightFrame" parent="WorldFrame" setAllPoints="true"  hidden="true">
+    <Layers>
+      <Layer level="BACKGROUND">
+        <Texture name="$parentTexture" file="interface\AddOns\GoH\Images\GoH_Fight.tga" alphaMode="ADD" />
+      </Layer>
+    </Layers>
+  </Frame>
+<!-- FIGHT GRAPHIC 2 -->
+  <Frame name="GoH_FightFrame2" parent="WorldFrame" setAllPoints="true"  hidden="true">
+    <Layers>
+      <Layer level="BACKGROUND">
+        <Texture name="$parentTexture" file="interface\AddOns\GoH\Images\GoH_Fight.tga" alphaMode="ADD" />
+      </Layer>
+    </Layers>
+  </Frame>
+<!-- FIGHT GRAPHIC 3 -->
+  <Frame name="GoH_FightFrame3" parent="WorldFrame" setAllPoints="true"  hidden="true">
+    <Layers>
+      <Layer level="BACKGROUND">
+        <Texture name="$parentTexture" file="interface\AddOns\GoH\Images\GoH_Fight.tga" alphaMode="ADD" />
+      </Layer>
+    </Layers>
+  </Frame>
+  
+  
+  
+  
+  
+  <!-- ################################################################## -->
+		<!-- ################################################################## -->
+		<!-- ################################################################## -->
+		<!-- ################################################################## -->
+
+<!-- ################################################################## -->
+		<!-- ################################################################## -->
+		<!-- ################################################################## -->
+		<!-- ################################################################## -->
+
+<!-- INTERRUPTED GRAPHIC -->
+  <Frame name="GoH_InterruptedFrame" parent="WorldFrame" setAllPoints="true"  hidden="true">
+    <Layers>
+      <Layer level="BACKGROUND">
+        <Texture name="$parentTexture" file="interface\AddOns\GoH\Images\GoH_INTERRUPTED.tga" alphaMode="ADD" />
+      </Layer>
+    </Layers>
+  </Frame>
+<!-- INTERRUPTED GRAPHIC 2 -->
+  <Frame name="GoH_InterruptedFrame2" parent="WorldFrame" setAllPoints="true"  hidden="true">
+    <Layers>
+      <Layer level="BACKGROUND">
+        <Texture name="$parentTexture" file="interface\AddOns\GoH\Images\GoH_INTERRUPTED.tga" alphaMode="ADD" />
+      </Layer>
+    </Layers>
+  </Frame>
+<!-- INTERRUPTED GRAPHIC 3 -->
+  <Frame name="GoH_InterruptedFrame3" parent="WorldFrame" setAllPoints="true"  hidden="true">
+    <Layers>
+      <Layer level="BACKGROUND">
+        <Texture name="$parentTexture" file="interface\AddOns\GoH\Images\GoH_INTERRUPTED.tga" alphaMode="ADD" />
+      </Layer>
+    </Layers>
+  </Frame>
+
+		<!-- ################################################################## -->
+		<!-- ################################################################## -->
+		<!-- ################################################################## -->
+		<!-- ################################################################## -->
+  
+  
+  <!-- ################################################################## -->
+		<!-- ################################################################## -->
+		<!-- ################################################################## -->
+		<!-- ################################################################## -->
+
+<!-- FATALITY GRAPHIC -->
+  <Frame name="GoH_FatalityFrame" parent="WorldFrame" setAllPoints="true"  hidden="true">
+    <Layers>
+      <Layer level="BACKGROUND">
+        <Texture name="$parentTexture" file="interface\AddOns\GoH\Images\GoH_Fatality.tga" alphaMode="ADD" />
+      </Layer>
+    </Layers>
+  </Frame>
+<!-- FATALITY GRAPHIC 2 -->
+  <Frame name="GoH_FatalityFrame2" parent="WorldFrame" setAllPoints="true"  hidden="true">
+    <Layers>
+      <Layer level="BACKGROUND">
+        <Texture name="$parentTexture" file="interface\AddOns\GoH\Images\GoH_Fatality.tga" alphaMode="ADD" />
+      </Layer>
+    </Layers>
+  </Frame>
+<!-- FATALITY GRAPHIC 3 -->
+  <Frame name="GoH_FatalityFrame3" parent="WorldFrame" setAllPoints="true"  hidden="true">
+    <Layers>
+      <Layer level="BACKGROUND">
+        <Texture name="$parentTexture" file="interface\AddOns\GoH\Images\GoH_Fatality.tga" alphaMode="ADD" />
+      </Layer>
+    </Layers>
+  </Frame>
+  
+  <!-- FINISH IT GRAPHIC -->
+  <Frame name="GoH_FinishItFrame" parent="WorldFrame" setAllPoints="true"  hidden="true">
+    <Layers>
+      <Layer level="BACKGROUND">
+        <Texture name="$parentTexture" file="interface\AddOns\GoH\Images\GoH_Finish_It.tga" alphaMode="ADD" />
+      </Layer>
+    </Layers>
+  </Frame>
+<!-- FINISH IT GRAPHIC 2 -->
+  <Frame name="GoH_FinishItFrame2" parent="WorldFrame" setAllPoints="true"  hidden="true">
+    <Layers>
+      <Layer level="BACKGROUND">
+        <Texture name="$parentTexture" file="interface\AddOns\GoH\Images\GoH_Finish_It.tga" alphaMode="ADD" />
+      </Layer>
+    </Layers>
+  </Frame>
+<!-- FINISH IT GRAPHIC 3 -->
+  <Frame name="GoH_FinishItFrame3" parent="WorldFrame" setAllPoints="true"  hidden="true">
+    <Layers>
+      <Layer level="BACKGROUND">
+        <Texture name="$parentTexture" file="interface\AddOns\GoH\Images\GoH_Finish_It.tga" alphaMode="ADD" />
+      </Layer>
+    </Layers>
+  </Frame>
+  
+ 
+  
+  
+  
+        <!-- ################################################################## -->
+		<!-- ################################################################## -->
+		<!-- ################################################################## -->
+		<!-- ################################################################## -->
+
+<!-- ANNIHILATED GRAPHIC -->
+  <Frame name="GoH_AnnihilatedFrame" parent="WorldFrame" setAllPoints="true"  hidden="true">
+    <Layers>
+      <Layer level="BACKGROUND">
+        <Texture name="$parentTexture" file="interface\AddOns\GoH\Images\GoH_Annihilated.tga" alphaMode="ADD" />
+      </Layer>
+    </Layers>
+  </Frame>
+<!-- ANNIHILATED GRAPHIC 2 -->
+  <Frame name="GoH_AnnihilatedFrame2" parent="WorldFrame" setAllPoints="true"  hidden="true">
+    <Layers>
+      <Layer level="BACKGROUND">
+        <Texture name="$parentTexture" file="interface\AddOns\GoH\Images\GoH_Annihilated.tga" alphaMode="ADD" />
+      </Layer>
+    </Layers>
+  </Frame>
+<!-- ANNIHILATED GRAPHIC 3 -->
+  <Frame name="GoH_AnnihilatedFrame3" parent="WorldFrame" setAllPoints="true"  hidden="true">
+    <Layers>
+      <Layer level="BACKGROUND">
+        <Texture name="$parentTexture" file="interface\AddOns\GoH\Images\GoH_Annihilated.tga" alphaMode="ADD" />
+      </Layer>
+    </Layers>
+  </Frame>
+  
+  <!-- ################################################################## -->
+		<!-- ################################################################## -->
+		<!-- ################################################################## -->
+		<!-- ################################################################## -->
+
+<!-- EXCELLENT GRAPHIC -->
+  <Frame name="GoH_ExcellentFrame" parent="WorldFrame" setAllPoints="true"  hidden="true">
+    <Layers>
+      <Layer level="BACKGROUND">
+        <Texture name="$parentTexture" file="interface\AddOns\GoH\Images\GoH_Excellent.tga" alphaMode="ADD" />
+      </Layer>
+    </Layers>
+  </Frame>
+<!-- EXCELLENT GRAPHIC 2 -->
+  <Frame name="GoH_ExcellentFrame2" parent="WorldFrame" setAllPoints="true"  hidden="true">
+    <Layers>
+      <Layer level="BACKGROUND">
+        <Texture name="$parentTexture" file="interface\AddOns\GoH\Images\GoH_Excellent.tga" alphaMode="ADD" />
+      </Layer>
+    </Layers>
+  </Frame>
+<!-- EXCELLENT GRAPHIC 3 -->
+  <Frame name="GoH_ExcellentFrame3" parent="WorldFrame" setAllPoints="true"  hidden="true">
+    <Layers>
+      <Layer level="BACKGROUND">
+        <Texture name="$parentTexture" file="interface\AddOns\GoH\Images\GoH_Excellent.tga" alphaMode="ADD" />
+      </Layer>
+    </Layers>
+  </Frame>
+  
+  <!-- ################################################################## -->
+		<!-- ################################################################## -->
+		<!-- ################################################################## -->
+		<!-- ################################################################## -->
+
+<!-- FABULOUS GRAPHIC -->
+  <Frame name="GoH_FabulousFrame" parent="WorldFrame" setAllPoints="true"  hidden="true">
+    <Layers>
+      <Layer level="BACKGROUND">
+        <Texture name="$parentTexture" file="interface\AddOns\GoH\Images\GoH_Fabulous.tga" alphaMode="ADD" />
+      </Layer>
+    </Layers>
+  </Frame>
+<!-- FABULOUS GRAPHIC 2 -->
+  <Frame name="GoH_FabulousFrame2" parent="WorldFrame" setAllPoints="true"  hidden="true">
+    <Layers>
+      <Layer level="BACKGROUND">
+        <Texture name="$parentTexture" file="interface\AddOns\GoH\Images\GoH_Fabulous.tga" alphaMode="ADD" />
+      </Layer>
+    </Layers>
+  </Frame>
+<!-- FABULOUS GRAPHIC 3 -->
+  <Frame name="GoH_FabulousFrame3" parent="WorldFrame" setAllPoints="true"  hidden="true">
+    <Layers>
+      <Layer level="BACKGROUND">
+        <Texture name="$parentTexture" file="interface\AddOns\GoH\Images\GoH_Fabulous.tga" alphaMode="ADD" />
+      </Layer>
+    </Layers>
+  </Frame>
+
+		<!-- ################################################################## -->
+		<!-- ################################################################## -->
+		<!-- ################################################################## -->
+		<!-- ################################################################## -->
+
+<!-- IMPRESSIVE GRAPHIC -->
+  <Frame name="GoH_ImpressiveFrame" parent="WorldFrame" setAllPoints="true"  hidden="true">
+    <Layers>
+      <Layer level="BACKGROUND">
+        <Texture name="$parentTexture" file="interface\AddOns\GoH\Images\GoH_Impressive.tga" alphaMode="ADD" />
+      </Layer>
+    </Layers>
+  </Frame>
+<!-- IMPRESSIVE GRAPHIC 2 -->
+  <Frame name="GoH_ImpressiveFrame2" parent="WorldFrame" setAllPoints="true"  hidden="true">
+    <Layers>
+      <Layer level="BACKGROUND">
+        <Texture name="$parentTexture" file="interface\AddOns\GoH\Images\GoH_Impressive.tga" alphaMode="ADD" />
+      </Layer>
+    </Layers>
+  </Frame>
+<!-- IMPRESSIVE GRAPHIC 3 -->
+  <Frame name="GoH_ImpressiveFrame3" parent="WorldFrame" setAllPoints="true"  hidden="true">
+    <Layers>
+      <Layer level="BACKGROUND">
+        <Texture name="$parentTexture" file="interface\AddOns\GoH\Images\GoH_Impressive.tga" alphaMode="ADD" />
+      </Layer>
+    </Layers>
+  </Frame>
+
+		<!-- ################################################################## -->
+		<!-- ################################################################## -->
+		<!-- ################################################################## -->
+		<!-- ################################################################## -->
+
+<!-- OUTSTANDING GRAPHIC -->
+  <Frame name="GoH_OutstandingFrame" parent="WorldFrame" setAllPoints="true"  hidden="true">
+    <Layers>
+      <Layer level="BACKGROUND">
+        <Texture name="$parentTexture" file="interface\AddOns\GoH\Images\GoH_Outstanding.tga" alphaMode="ADD" />
+      </Layer>
+    </Layers>
+  </Frame>
+<!-- OUTSTANDING GRAPHIC 2 -->
+  <Frame name="GoH_OutstandingFrame2" parent="WorldFrame" setAllPoints="true"  hidden="true">
+    <Layers>
+      <Layer level="BACKGROUND">
+        <Texture name="$parentTexture" file="interface\AddOns\GoH\Images\GoH_Outstanding.tga" alphaMode="ADD" />
+      </Layer>
+    </Layers>
+  </Frame>
+<!-- OUTSTANDING GRAPHIC 3 -->
+  <Frame name="GoH_OutstandingFrame3" parent="WorldFrame" setAllPoints="true"  hidden="true">
+    <Layers>
+      <Layer level="BACKGROUND">
+        <Texture name="$parentTexture" file="interface\AddOns\GoH\Images\GoH_Outstanding.tga" alphaMode="ADD" />
+      </Layer>
+    </Layers>
+  </Frame>
+
+		<!-- ################################################################## -->
+		<!-- ################################################################## -->
+		<!-- ################################################################## -->
+		<!-- ################################################################## -->
+
+<!-- SUPERB GRAPHIC -->
+  <Frame name="GoH_SuperbFrame" parent="WorldFrame" setAllPoints="true"  hidden="true">
+    <Layers>
+      <Layer level="BACKGROUND">
+        <Texture name="$parentTexture" file="interface\AddOns\GoH\Images\GoH_Superb.tga" alphaMode="ADD" />
+      </Layer>
+    </Layers>
+  </Frame>
+<!-- SUPERB GRAPHIC 2 -->
+  <Frame name="GoH_SuperbFrame2" parent="WorldFrame" setAllPoints="true"  hidden="true">
+    <Layers>
+      <Layer level="BACKGROUND">
+        <Texture name="$parentTexture" file="interface\AddOns\GoH\Images\GoH_Superb.tga" alphaMode="ADD" />
+      </Layer>
+    </Layers>
+  </Frame>
+<!-- SUPERB GRAPHIC 3 -->
+  <Frame name="GoH_SuperbFrame3" parent="WorldFrame" setAllPoints="true"  hidden="true">
+    <Layers>
+      <Layer level="BACKGROUND">
+        <Texture name="$parentTexture" file="interface\AddOns\GoH\Images\GoH_Superb.tga" alphaMode="ADD" />
+      </Layer>
+    </Layers>
+  </Frame>
+
+		<!-- ################################################################## -->
+		<!-- ################################################################## -->
+		<!-- ################################################################## -->
+		<!-- ################################################################## -->
+
+<!-- WELL DONE GRAPHIC -->
+  <Frame name="GoH_WellDoneFrame" parent="WorldFrame" setAllPoints="true"  hidden="true">
+    <Layers>
+      <Layer level="BACKGROUND">
+        <Texture name="$parentTexture" file="interface\AddOns\GoH\Images\GoH_WellDone.tga" alphaMode="ADD" />
+      </Layer>
+    </Layers>
+  </Frame>
+<!-- WELL DONE GRAPHIC 2 -->
+  <Frame name="GoH_WellDoneFrame2" parent="WorldFrame" setAllPoints="true"  hidden="true">
+    <Layers>
+      <Layer level="BACKGROUND">
+        <Texture name="$parentTexture" file="interface\AddOns\GoH\Images\GoH_WellDone.tga" alphaMode="ADD" />
+      </Layer>
+    </Layers>
+  </Frame>
+<!-- WELL DONE GRAPHIC 3 -->
+  <Frame name="GoH_WellDoneFrame3" parent="WorldFrame" setAllPoints="true"  hidden="true">
+    <Layers>
+      <Layer level="BACKGROUND">
+        <Texture name="$parentTexture" file="interface\AddOns\GoH\Images\GoH_WellDone.tga" alphaMode="ADD" />
+      </Layer>
+    </Layers>
+  </Frame>
+
+		<!-- ################################################################## -->
+		<!-- ################################################################## -->
+		<!-- ################################################################## -->
+		<!-- ################################################################## -->
+
+
+
+		<!-- ################################################################## -->
+		<!-- ################################################################## -->
+		<!-- ################################################################## -->
+		<!-- ################################################################## -->
+
+<!-- FLAWLESS VICTORY GRAPHIC -->
+  <Frame name="GoH_FlawlessVictoryFrame" parent="WorldFrame" setAllPoints="true"  hidden="true">
+    <Layers>
+      <Layer level="BACKGROUND">
+        <Texture name="$parentTexture" file="interface\AddOns\GoH\Images\GoH_Flawless_Victory.tga" alphaMode="ADD" />
+      </Layer>
+    </Layers>
+  </Frame>
+<!-- WONDERFUL GRAPHIC 2 -->
+  <Frame name="GoH_FlawlessVictoryFrame2" parent="WorldFrame" setAllPoints="true"  hidden="true">
+    <Layers>
+      <Layer level="BACKGROUND">
+        <Texture name="$parentTexture" file="interface\AddOns\GoH\Images\GoH_Flawless_Victory.tga" alphaMode="ADD" />
+      </Layer>
+    </Layers>
+  </Frame>
+<!-- WONDERFUL GRAPHIC 3 -->
+  <Frame name="GoH_FlawlessVictoryFrame3" parent="WorldFrame" setAllPoints="true"  hidden="true">
+    <Layers>
+      <Layer level="BACKGROUND">
+        <Texture name="$parentTexture" file="interface\AddOns\GoH\Images\GoH_Flawless_Victory.tga" alphaMode="ADD" />
+      </Layer>
+    </Layers>
+  </Frame>
+  
+  <!-- ################################################################## -->
+		<!-- ################################################################## -->
+		<!-- ################################################################## -->
+		<!-- ################################################################## -->
+
+<!-- YOU WIN GRAPHIC -->
+  <Frame name="GoH_YouWinFrame" parent="WorldFrame" setAllPoints="true"  hidden="true">
+    <Layers>
+      <Layer level="BACKGROUND">
+        <Texture name="$parentTexture" file="interface\AddOns\GoH\Images\GoH_You_Win.tga" alphaMode="ADD" />
+      </Layer>
+    </Layers>
+  </Frame>
+<!-- YOU WIN GRAPHIC 2 -->
+  <Frame name="GoH_YouWinFrame2" parent="WorldFrame" setAllPoints="true"  hidden="true">
+    <Layers>
+      <Layer level="BACKGROUND">
+        <Texture name="$parentTexture" file="interface\AddOns\GoH\Images\GoH_You_Win.tga" alphaMode="ADD" />
+      </Layer>
+    </Layers>
+  </Frame>
+<!-- YOU WIN GRAPHIC 3 -->
+  <Frame name="GoH_YouWinFrame3" parent="WorldFrame" setAllPoints="true"  hidden="true">
+    <Layers>
+      <Layer level="BACKGROUND">
+        <Texture name="$parentTexture" file="interface\AddOns\GoH\Images\GoH_You_Win.tga" alphaMode="ADD" />
+      </Layer>
+    </Layers>
+  </Frame>
+  
+  <!-- ################################################################## -->
+		<!-- ################################################################## -->
+		<!-- ################################################################## -->
+		<!-- ################################################################## -->
+
+<!-- YOU LOSE GRAPHIC -->
+  <Frame name="GoH_YouLoseFrame" parent="WorldFrame" setAllPoints="true"  hidden="true">
+    <Layers>
+      <Layer level="BACKGROUND">
+        <Texture name="$parentTexture" file="interface\AddOns\GoH\Images\GoH_You_Lose.tga" alphaMode="ADD" />
+      </Layer>
+    </Layers>
+  </Frame>
+<!-- YOU LOSE GRAPHIC 2 -->
+  <Frame name="GoH_YouLoseFrame2" parent="WorldFrame" setAllPoints="true"  hidden="true">
+    <Layers>
+      <Layer level="BACKGROUND">
+        <Texture name="$parentTexture" file="interface\AddOns\GoH\Images\GoH_You_Lose.tga" alphaMode="ADD" />
+      </Layer>
+    </Layers>
+  </Frame>
+<!-- YOU LOSE GRAPHIC 3 -->
+  <Frame name="GoH_YouLoseFrame3" parent="WorldFrame" setAllPoints="true"  hidden="true">
+    <Layers>
+      <Layer level="BACKGROUND">
+        <Texture name="$parentTexture" file="interface\AddOns\GoH\Images\GoH_You_Lose.tga" alphaMode="ADD" />
+      </Layer>
+    </Layers>
+  </Frame>
+  
+  <!-- ################################################################## -->
+		<!-- ################################################################## -->
+		<!-- ################################################################## -->
+		<!-- ################################################################## -->
+
+<!-- BABALITY GRAPHIC -->
+  <Frame name="GoH_BabalityFrame" parent="WorldFrame" setAllPoints="true"  hidden="true">
+    <Layers>
+      <Layer level="BACKGROUND">
+        <Texture name="$parentTexture" file="interface\AddOns\GoH\Images\GoH_Babality.tga" alphaMode="ADD" />
+      </Layer>
+    </Layers>
+  </Frame>
+<!-- ANIMALITY GRAPHIC 2 -->
+  <Frame name="GoH_BabalityFrame2" parent="WorldFrame" setAllPoints="true"  hidden="true">
+    <Layers>
+      <Layer level="BACKGROUND">
+        <Texture name="$parentTexture" file="interface\AddOns\GoH\Images\GoH_Babality.tga" alphaMode="ADD" />
+      </Layer>
+    </Layers>
+  </Frame>
+<!-- ANIMALITY GRAPHIC 3 -->
+  <Frame name="GoH_BabalityFrame3" parent="WorldFrame" setAllPoints="true"  hidden="true">
+    <Layers>
+      <Layer level="BACKGROUND">
+        <Texture name="$parentTexture" file="interface\AddOns\GoH\Images\GoH_Babality.tga" alphaMode="ADD" />
+      </Layer>
+    </Layers>
+  </Frame>
+  
+        <!-- ################################################################## -->
+		<!-- ################################################################## -->
+		<!-- ################################################################## -->
+		<!-- ################################################################## -->
+
+
+  
+  <!-- ################################################################## -->
+		<!-- ################################################################## -->
+		<!-- ################################################################## -->
+		<!-- ################################################################## -->
+
+<!-- BRUTALITY GRAPHIC -->
+  <Frame name="GoH_BrutalityFrame" parent="WorldFrame" setAllPoints="true"  hidden="true">
+    <Layers>
+      <Layer level="BACKGROUND">
+        <Texture name="$parentTexture" file="interface\AddOns\GoH\Images\GoH_Brutality.tga" alphaMode="ADD" />
+      </Layer>
+    </Layers>
+  </Frame>
+<!-- BRUTALITY GRAPHIC 2 -->
+  <Frame name="GoH_BrutalityFrame2" parent="WorldFrame" setAllPoints="true"  hidden="true">
+    <Layers>
+      <Layer level="BACKGROUND">
+        <Texture name="$parentTexture" file="interface\AddOns\GoH\Images\GoH_Brutality.tga" alphaMode="ADD" />
+      </Layer>
+    </Layers>
+  </Frame>
+<!-- BRUTALITY GRAPHIC 3 -->
+  <Frame name="GoH_BrutalityFrame3" parent="WorldFrame" setAllPoints="true"  hidden="true">
+    <Layers>
+      <Layer level="BACKGROUND">
+        <Texture name="$parentTexture" file="interface\AddOns\GoH\Images\GoH_Brutality.tga" alphaMode="ADD" />
+      </Layer>
+    </Layers>
+  </Frame>
+  
+  <!-- ################################################################## -->
+		<!-- ################################################################## -->
+		<!-- ################################################################## -->
+		<!-- ################################################################## -->
+
+<!-- WONDERFUL GRAPHIC -->
+  <Frame name="GoH_WonderfulFrame" parent="WorldFrame" setAllPoints="true"  hidden="true">
+    <Layers>
+      <Layer level="BACKGROUND">
+        <Texture name="$parentTexture" file="interface\AddOns\GoH\Images\GoH_Wonderful.tga" alphaMode="ADD" />
+      </Layer>
+    </Layers>
+  </Frame>
+<!-- WONDERFUL GRAPHIC 2 -->
+  <Frame name="GoH_WonderfulFrame2" parent="WorldFrame" setAllPoints="true"  hidden="true">
+    <Layers>
+      <Layer level="BACKGROUND">
+        <Texture name="$parentTexture" file="interface\AddOns\GoH\Images\GoH_Wonderful.tga" alphaMode="ADD" />
+      </Layer>
+    </Layers>
+  </Frame>
+<!-- WONDERFUL GRAPHIC 3 -->
+  <Frame name="GoH_WonderfulFrame3" parent="WorldFrame" setAllPoints="true"  hidden="true">
+    <Layers>
+      <Layer level="BACKGROUND">
+        <Texture name="$parentTexture" file="interface\AddOns\GoH\Images\GoH_Wonderful.tga" alphaMode="ADD" />
+      </Layer>
+    </Layers>
+  </Frame>
+  
+  <!-- ################################################################## -->
+		<!-- ################################################################## -->
+		<!-- ################################################################## -->
+		<!-- ################################################################## -->
+
+<!-- ANIMALITY GRAPHIC -->
+  <Frame name="GoH_AnimalityFrame" parent="WorldFrame" setAllPoints="true"  hidden="true">
+    <Layers>
+      <Layer level="BACKGROUND">
+        <Texture name="$parentTexture" file="interface\AddOns\GoH\Images\GoH_Animality.tga" alphaMode="ADD" />
+      </Layer>
+    </Layers>
+  </Frame>
+<!-- ANIMALITY GRAPHIC 2 -->
+  <Frame name="GoH_AnimalityFrame2" parent="WorldFrame" setAllPoints="true"  hidden="true">
+    <Layers>
+      <Layer level="BACKGROUND">
+        <Texture name="$parentTexture" file="interface\AddOns\GoH\Images\GoH_Animality.tga" alphaMode="ADD" />
+      </Layer>
+    </Layers>
+  </Frame>
+<!-- ANIMALITY GRAPHIC 3 -->
+  <Frame name="GoH_AnimalityFrame3" parent="WorldFrame" setAllPoints="true"  hidden="true">
+    <Layers>
+      <Layer level="BACKGROUND">
+        <Texture name="$parentTexture" file="interface\AddOns\GoH\Images\GoH_Animality.tga" alphaMode="ADD" />
+      </Layer>
+    </Layers>
+  </Frame>
+		<!-- ################################################################## -->
+		<!-- ################################################################## -->
+		<!-- ################################################################## -->
+		<!-- ################################################################## -->
+		<!-- ################################################################## -->
+		<!-- ################################################################## -->
+		<!-- ################################################################## -->
+		<!-- ################################################################## -->
+		<!-- ################################################################## -->
+		<!-- ################################################################## -->
+		<!-- ################################################################## -->
+
+  <!-- MAIN FORM -->
+  <Frame name="GoH_DeathKnight_Form" parent="UIParent" toplevel="true" movable="true" frameStrata="HIGH" enableMouse="true" hidden="true">
+
+			<Size>
+			  <AbsDimension x="860" y="480" />
+			</Size>
+			<Anchors>
+			  <Anchor point="CENTER">
+				<Offset>
+				  <AbsDimension x="0" y="0" />
+				</Offset>
+			  </Anchor>
+			</Anchors>
+
+			<TitleRegion setAllPoints="true" />
+
+			<Frames>
+						  <!-- CLOSE BUTTON -->
+						  <Button name="ButtonClose">
+							<Size>
+							  <AbsDimension x="44" y="21" />
+							</Size>
+							<Anchors>
+							  <Anchor point="TOPLEFT">
+								<Offset>
+								  <AbsDimension x="801" y="-108" />
+								</Offset>
+							  </Anchor>
+							</Anchors>
+							<NormalTexture file="interface\AddOns\GoH\Images\GoH_Button_Close_Normal">
+							  <TexCoords left="0" right="0.35" top="0" bottom="0.16" />
+							</NormalTexture>
+							<PushedTexture file="interface\AddOns\GoH\Images\GoH_Button_Close_Down">
+							  <TexCoords left="0" right="0.35" top="0" bottom="0.16" />
+							</PushedTexture>
+							<DisabledTexture file="interface\AddOns\GoH\Images\GoH_Button_Close_Disable">
+							  <TexCoords left="0" right="0.35" top="0" bottom="0.16" />
+							</DisabledTexture>
+							<HighlightTexture file="interface\AddOns\GoH\Images\GoH_Button_Close_Normal" alphaMode="ADD">
+							  <TexCoords left="0" right="0.35" top="0" bottom="0.16" />
+							</HighlightTexture>
+							<ButtonText name="ButtonCloseText">
+							  <FontHeight>
+								<AbsValue val="10" />
+							  </FontHeight>
+							</ButtonText>
+							<NormalFont style="GameFontNormal" />
+							<HighlightFont style="GameFontHighlight" />
+							<DisabledFont style="GameFontDisable" />
+									<Scripts>
+										<OnEnter>
+											GameTooltip:SetOwner(self, "ANCHOR_TOP");
+											GameTooltip:SetText("CLOSE", 1.0, 0.8, 0.0, 1 );
+											GameTooltip:Show(); 
+										</OnEnter>
+										<OnLeave>
+											GameTooltip:Hide();
+										</OnLeave>
+										<OnClick>
+											GoH_DeathKnight_BUTTON_CLOSE_OnClick();
+										</OnClick>
+									</Scripts>
+						  </Button>
+
+
+						   <!-- DEATH KNIGHT BUTTON -->
+						  <Button name="GoHv5_DeathKnight_MenuButtonDeathKnight">
+							<Size>
+							  <!-- SIZE PERCENTAGE -->
+							  <AbsDimension x="51" y="51" />
+							</Size>
+							<Anchors>
+							  <Anchor point="TOPLEFT">
+								<Offset>
+								  <!-- LOCATION POSITION -->
+								  <AbsDimension x="246" y="-142" />
+								</Offset>
+							  </Anchor>
+							</Anchors>
+							<NormalTexture file="interface\AddOns\GoH\Images\GoH_v5_Menu_DeathKnight_Normal">
+							  <!-- AREA OF IMAGE TO LOAD UP -->
+							  <TexCoords left="0" right="0.8" top="0" bottom="0.8" />
+							</NormalTexture>
+							<PushedTexture file="interface\AddOns\GoH\Images\GoH_v5_Menu_DeathKnight_Normal">
+							  <!-- AREA OF IMAGE TO LOAD UP -->
+							  <TexCoords left="0" right="0.8" top="0" bottom="0.8" />
+							</PushedTexture>
+							<DisabledTexture file="interface\AddOns\GoH\Images\GoH_v5_Menu_DeathKnight_Selected">
+							  <!-- AREA OF IMAGE TO LOAD UP -->
+							  <TexCoords left="0" right="0.8" top="0" bottom="0.8" />
+							</DisabledTexture>
+							<HighlightTexture file="interface\AddOns\GoH\Images\GoH_v5_Menu_DeathKnight_Selected" alphaMode="ADD">
+							  <!-- AREA OF IMAGE TO LOAD UP -->
+							  <TexCoords left="0" right="0.8" top="0" bottom="0.8" />
+							</HighlightTexture>
+							<ButtonText name="$parentGoHv5_DeathKnight_MenuButtonDeathKnightText">
+							  <FontHeight>
+								<AbsValue val="10" />
+							  </FontHeight>
+							</ButtonText>
+							<NormalFont style="GameFontNormal" />
+							<HighlightFont style="GameFontHighlight" />
+							<DisabledFont style="GameFontDisable" />
+									<Scripts>
+										<OnEnter>
+											GameTooltip:SetOwner(self, "ANCHOR_TOP");
+											GameTooltip:SetText(("Death Knight Page 1"), 1.0, 0.8, 0.0, 1 );
+											
+											GameTooltip:Show(); 
+										</OnEnter>
+										<OnLeave>
+											GameTooltip:Hide();
+										</OnLeave>
+										<OnClick>
+											<!-- DON'T NEED TO CALL ANYTHING AS THIS IS THE DEATHKNIGHT MENU AND THIS BUTTON IS DISABLED -->
+										</OnClick>
+									</Scripts>
+						  </Button>
+
+
+						   <!-- OPTIONS SETTINGS BUTTON -->
+						  <Button name="GoHv5_DeathKnight_MenuButtonSettings">
+							<Size>
+							  <!-- SIZE PERCENTAGE -->
+							  <AbsDimension x="51" y="51" />
+							</Size>
+							<Anchors>
+							  <Anchor point="TOPRIGHT">
+								<Offset>
+								  <!-- LOCATION POSITION -->
+								  <AbsDimension x="-16" y="-140" />
+								</Offset>
+							  </Anchor>
+							</Anchors>
+							<NormalTexture file="interface\AddOns\GoH\Images\GoH_v5_Menu_Zettings_Normal">
+							  <!-- AREA OF IMAGE TO LOAD UP -->
+							  <TexCoords left="0" right="0.8" top="0" bottom="0.8" />
+							</NormalTexture>
+							<PushedTexture file="interface\AddOns\GoH\Images\GoH_v5_Menu_Zettings_Normal">
+							  <!-- AREA OF IMAGE TO LOAD UP -->
+							  <TexCoords left="0" right="0.8" top="0" bottom="0.8" />
+							</PushedTexture>
+							<DisabledTexture file="interface\AddOns\GoH\Images\GoH_v5_Menu_Zettings_Selected">
+							  <!-- AREA OF IMAGE TO LOAD UP -->
+							  <TexCoords left="0" right="0.8" top="0" bottom="0.8" />
+							</DisabledTexture>
+							<HighlightTexture file="interface\AddOns\GoH\Images\GoH_v5_Menu_Zettings_Normal" alphaMode="ADD">
+							  <!-- AREA OF IMAGE TO LOAD UP -->
+							  <TexCoords left="0" right="0.8" top="0" bottom="0.8" />
+							</HighlightTexture>
+							<ButtonText name="$parentGoHv5_DeathKnight_MenuButtonSettingsText">
+							  <FontHeight>
+								<AbsValue val="10" />
+							  </FontHeight>
+							</ButtonText>
+							<NormalFont style="GameFontNormal" />
+							<HighlightFont style="GameFontHighlight" />
+							<DisabledFont style="GameFontDisable" />
+									<Scripts>
+										<OnEnter>
+											GameTooltip:SetOwner(self, "ANCHOR_TOP");
+											GameTooltip:SetText(("Menu Options Page 1"), 1.0, 0.8, 0.0, 1 );
+											
+											
+											GameTooltip:Show(); 
+										</OnEnter>
+										<OnLeave>
+											GameTooltip:Hide();
+										</OnLeave>
+										<OnClick>
+											GoHv5_DeathKnight_MenuButtonSettings_OnClick(); 
+										</OnClick>
+									</Scripts>
+						  </Button>
+						  
+						  <!-- DRUID BUTTON -->
+						  <Button name="GoHv5_DeathKnight_MenuButtonDruid">
+							<Size>
+							  <!-- SIZE PERCENTAGE -->
+							  <AbsDimension x="51" y="51" />
+							</Size>
+							<Anchors>
+							  <Anchor point="TOPLEFT">
+								<Offset>
+								  <!-- LOCATION POSITION -->
+								  <AbsDimension x="285" y="-142" />
+								</Offset>
+							  </Anchor>
+							</Anchors>
+							<NormalTexture file="interface\AddOns\GoH\Images\GoH_v5_Menu_Druid_Normal">
+							  <!-- AREA OF IMAGE TO LOAD UP -->
+							  <TexCoords left="0" right="0.8" top="0" bottom="0.8" />
+							</NormalTexture>
+							<PushedTexture file="interface\AddOns\GoH\Images\GoH_v5_Menu_Druid_Normal">
+							  <!-- AREA OF IMAGE TO LOAD UP -->
+							  <TexCoords left="0" right="0.8" top="0" bottom="0.8" />
+							</PushedTexture>
+							<DisabledTexture file="interface\AddOns\GoH\Images\GoH_v5_Menu_Druid_Uninstalled">
+							  <!-- AREA OF IMAGE TO LOAD UP -->
+							  <TexCoords left="0" right="0.8" top="0" bottom="0.8" />
+							</DisabledTexture>
+							<HighlightTexture file="interface\AddOns\GoH\Images\GoH_v5_Menu_Druid_Selected" alphaMode="ADD">
+							  <!-- AREA OF IMAGE TO LOAD UP -->
+							  <TexCoords left="0" right="0.8" top="0" bottom="0.8" />
+							</HighlightTexture>
+							<ButtonText name="$parentGoHv5_Settings_MenuButtonDruidText">
+							  <FontHeight>
+								<AbsValue val="10" />
+							  </FontHeight>
+							</ButtonText>
+							<NormalFont style="GameFontNormal" />
+							<HighlightFont style="GameFontHighlight" />
+							<DisabledFont style="GameFontDisable" />
+									<Scripts>
+										<OnEnter>
+											GameTooltip:SetOwner(self, "ANCHOR_TOP");
+											GameTooltip:SetText(("DRUID"), 1.0, 0.8, 0.0, 1 );
+											GameTooltip:Show(); 
+										</OnEnter>
+										<OnLeave>
+											GameTooltip:Hide();
+										</OnLeave>
+										<OnClick>
+									if (IsAddOnLoaded("GoH_Druid")) then
+										
+											GoH_Druid_Form:Show();
+											GoH_DeathKnight_Form:Hide();
+											else
+											GameTooltip:SetText(("Plugin not installed"), 1.0, 0.8, 0.0, 1 );
+										
+											
+									end	
+										</OnClick>
+									</Scripts>
+						  </Button>
+						  
+						   <!-- HUNTER BUTTON -->
+						  <Button name="GoHv5_DeathKnight_MenuButtonHunter">
+							<Size>
+							  <!-- SIZE PERCENTAGE -->
+							  <AbsDimension x="51" y="51" />
+							</Size>
+							<Anchors>
+							  <Anchor point="TOPLEFT">
+								<Offset>
+								  <!-- LOCATION POSITION -->
+								  <AbsDimension x="324" y="-142" />
+								</Offset>
+							  </Anchor>
+							</Anchors>
+							<NormalTexture file="interface\AddOns\GoH\Images\GoH_v5_Menu_Hunter_Normal">
+							  <!-- AREA OF IMAGE TO LOAD UP -->
+							  <TexCoords left="0" right="0.8" top="0" bottom="0.8" />
+							</NormalTexture>
+							<PushedTexture file="interface\AddOns\GoH\Images\GoH_v5_Menu_Hunter_Normal">
+							  <!-- AREA OF IMAGE TO LOAD UP -->
+							  <TexCoords left="0" right="0.8" top="0" bottom="0.8" />
+							</PushedTexture>
+							<DisabledTexture file="interface\AddOns\GoH\Images\GoH_v5_Menu_Hunter_Uninstalled">
+							  <!-- AREA OF IMAGE TO LOAD UP -->
+							  <TexCoords left="0" right="0.8" top="0" bottom="0.8" />
+							</DisabledTexture>
+							<HighlightTexture file="interface\AddOns\GoH\Images\GoH_v5_Menu_Hunter_Selected" alphaMode="ADD">
+							  <!-- AREA OF IMAGE TO LOAD UP -->
+							  <TexCoords left="0" right="0.8" top="0" bottom="0.8" />
+							</HighlightTexture>
+							<ButtonText name="$parentGoHv5_Settings_MenuButtonHunterText">
+							  <FontHeight>
+								<AbsValue val="10" />
+							  </FontHeight>
+							</ButtonText>
+							<NormalFont style="GameFontNormal" />
+							<HighlightFont style="GameFontHighlight" />
+							<DisabledFont style="GameFontDisable" />
+									<Scripts>
+										<OnLoad>
+											self:RegisterForClicks("LeftButtonUp","RightButtonUp")
+										</OnLoad>
+										<OnEnter>
+											GameTooltip:SetOwner(self, "ANCHOR_TOP");
+											GameTooltip:SetText(("HUNTER"), 1.0, 0.8, 0.0, 1 );
+											GameTooltip:Show(); 
+										</OnEnter>
+										<OnLeave>
+											GameTooltip:Hide();
+										</OnLeave>
+										<OnClick>
+										if (IsAddOnLoaded("GoH_Hunter")) then
+											GoH_Hunter_Form:Show();
+											GoH_DeathKnight_Form:Hide();
+											else
+											GameTooltip:SetText(("Plugin not installed"), 1.0, 0.8, 0.0, 1 );
+										end
+										</OnClick>
+									</Scripts>
+						  </Button>
+						  
+						  <!-- MAGE BUTTON -->
+						  <Button name="GoHv5_DeathKnight_MenuButtonMage">
+							<Size>
+							  <!-- SIZE PERCENTAGE -->
+							  <AbsDimension x="51" y="51" />
+							</Size>
+							<Anchors>
+							  <Anchor point="TOPLEFT">
+								<Offset>
+								  <!-- LOCATION POSITION -->
+								  <AbsDimension x="363" y="-142" />
+								</Offset>
+							  </Anchor>
+							</Anchors>
+							<NormalTexture file="interface\AddOns\GoH\Images\GoH_v5_Menu_Mage_Normal">
+							  <!-- AREA OF IMAGE TO LOAD UP -->
+							  <TexCoords left="0" right="0.8" top="0" bottom="0.8" />
+							</NormalTexture>
+							<PushedTexture file="interface\AddOns\GoH\Images\GoH_v5_Menu_Mage_Normal">
+							  <!-- AREA OF IMAGE TO LOAD UP -->
+							  <TexCoords left="0" right="0.8" top="0" bottom="0.8" />
+							</PushedTexture>
+							<DisabledTexture file="interface\AddOns\GoH\Images\GoH_v5_Menu_Mage_Uninstalled">
+							  <!-- AREA OF IMAGE TO LOAD UP -->
+							  <TexCoords left="0" right="0.8" top="0" bottom="0.8" />
+							</DisabledTexture>
+							<HighlightTexture file="interface\AddOns\GoH\Images\GoH_v5_Menu_Mage_Selected" alphaMode="ADD">
+							  <!-- AREA OF IMAGE TO LOAD UP -->
+							  <TexCoords left="0" right="0.8" top="0" bottom="0.8" />
+							</HighlightTexture>
+							<ButtonText name="$parentGoHv5_Settings_MenuButtonMageText">
+							  <FontHeight>
+								<AbsValue val="10" />
+							  </FontHeight>
+							</ButtonText>
+							<NormalFont style="GameFontNormal" />
+							<HighlightFont style="GameFontHighlight" />
+							<DisabledFont style="GameFontDisable" />
+									<Scripts>
+										<OnEnter>
+											GameTooltip:SetOwner(self, "ANCHOR_TOP");
+											GameTooltip:SetText(("MAGE"), 1.0, 0.8, 0.0, 1 );
+											GameTooltip:Show(); 
+										</OnEnter>
+										<OnLeave>
+											GameTooltip:Hide();
+										</OnLeave>
+										<OnClick>
+											if (IsAddOnLoaded("GoH_Mage")) then
+											GoH_Mage_Form:Show();
+											GoH_DeathKnight_Form:Hide();
+											else
+											GameTooltip:SetText(("Plugin not installed"), 1.0, 0.8, 0.0, 1 );
+										end
+										</OnClick>
+									</Scripts>
+						  </Button>
+						  
+						  <!-- MONK BUTTON -->
+						  <Button name="GoHv5_DeathKnight_MenuButtonMonk">
+							<Size>
+							  <!-- SIZE PERCENTAGE -->
+							  <AbsDimension x="51" y="51" />
+							</Size>
+							<Anchors>
+							  <Anchor point="TOPLEFT">
+								<Offset>
+								  <!-- LOCATION POSITION -->
+								  <AbsDimension x="402" y="-142" />
+								</Offset>
+							  </Anchor>
+							</Anchors>
+							<NormalTexture file="interface\AddOns\GoH\Images\GoH_v5_Menu_Monk_Normal">
+							  <!-- AREA OF IMAGE TO LOAD UP -->
+							  <TexCoords left="0" right="0.8" top="0" bottom="0.8" />
+							</NormalTexture>
+							<PushedTexture file="interface\AddOns\GoH\Images\GoH_v5_Menu_Monk_Normal">
+							  <!-- AREA OF IMAGE TO LOAD UP -->
+							  <TexCoords left="0" right="0.8" top="0" bottom="0.8" />
+							</PushedTexture>
+							<DisabledTexture file="interface\AddOns\GoH\Images\GoH_v5_Menu_Monk_Uninstalled">
+							  <!-- AREA OF IMAGE TO LOAD UP -->
+							  <TexCoords left="0" right="0.8" top="0" bottom="0.8" />
+							</DisabledTexture>
+							<HighlightTexture file="interface\AddOns\GoH\Images\GoH_v5_Menu_Monk_Selected" alphaMode="ADD">
+							  <!-- AREA OF IMAGE TO LOAD UP -->
+							  <TexCoords left="0" right="0.8" top="0" bottom="0.8" />
+							</HighlightTexture>
+							<ButtonText name="$parentGoHv5_Settings_MenuButtonMonkText">
+							  <FontHeight>
+								<AbsValue val="10" />
+							  </FontHeight>
+							</ButtonText>
+							<NormalFont style="GameFontNormal" />
+							<HighlightFont style="GameFontHighlight" />
+							<DisabledFont style="GameFontDisable" />
+									<Scripts>
+										<OnEnter>
+											GameTooltip:SetOwner(self, "ANCHOR_TOP");
+											GameTooltip:SetText(("MONK"), 1.0, 0.8, 0.0, 1 );
+											GameTooltip:Show(); 
+										</OnEnter>
+										<OnLeave>
+											GameTooltip:Hide();
+										</OnLeave>
+										<OnClick>
+											if (IsAddOnLoaded("GoH_Monk")) then
+											GoH_Monk_Form:Show();
+											GoH_DeathKnight_Form:Hide();
+											else
+											GameTooltip:SetText(("Plugin not installed"), 1.0, 0.8, 0.0, 1 );
+										end
+										</OnClick>
+									</Scripts>
+						  </Button>
+						  
+						  <!-- PALADIN BUTTON -->
+						  <Button name="GoHv5_DeathKnight_MenuButtonPaladin">
+							<Size>
+							  <!-- SIZE PERCENTAGE -->
+							  <AbsDimension x="51" y="51" />
+							</Size>
+							<Anchors>
+							  <Anchor point="TOPLEFT">
+								<Offset>
+								  <!-- LOCATION POSITION -->
+								  <AbsDimension x="441" y="-142" />
+								</Offset>
+							  </Anchor>
+							</Anchors>
+							<NormalTexture file="interface\AddOns\GoH\Images\GoH_v5_Menu_Paladin_Normal">
+							  <!-- AREA OF IMAGE TO LOAD UP -->
+							  <TexCoords left="0" right="0.8" top="0" bottom="0.8" />
+							</NormalTexture>
+							<PushedTexture file="interface\AddOns\GoH\Images\GoH_v5_Menu_Paladin_Normal">
+							  <!-- AREA OF IMAGE TO LOAD UP -->
+							  <TexCoords left="0" right="0.8" top="0" bottom="0.8" />
+							</PushedTexture>
+							<DisabledTexture file="interface\AddOns\GoH\Images\GoH_v5_Menu_Paladin_Uninstalled">
+							  <!-- AREA OF IMAGE TO LOAD UP -->
+							  <TexCoords left="0" right="0.8" top="0" bottom="0.8" />
+							</DisabledTexture>
+							<HighlightTexture file="interface\AddOns\GoH\Images\GoH_v5_Menu_Paladin_Selected" alphaMode="ADD">
+							  <!-- AREA OF IMAGE TO LOAD UP -->
+							  <TexCoords left="0" right="0.8" top="0" bottom="0.8" />
+							</HighlightTexture>
+							<ButtonText name="$parentGoHv5_Settings_MenuButtonPaladinText">
+							  <FontHeight>
+								<AbsValue val="10" />
+							  </FontHeight>
+							</ButtonText>
+							<NormalFont style="GameFontNormal" />
+							<HighlightFont style="GameFontHighlight" />
+							<DisabledFont style="GameFontDisable" />
+									<Scripts>
+										<OnLoad>
+											self:RegisterForClicks("LeftButtonUp","RightButtonUp")
+										</OnLoad>
+										<OnEnter>
+											GameTooltip:SetOwner(self, "ANCHOR_TOP");
+											GameTooltip:SetText(("PALADIN"), 1.0, 0.8, 0.0, 1 );
+											GameTooltip:Show(); 
+										</OnEnter>
+										<OnLeave>
+											GameTooltip:Hide();
+										</OnLeave>
+										<OnClick>
+											if (IsAddOnLoaded("GoH_Paladin")) then
+											GoH_Paladin_Form:Show();
+											GoH_DeathKnight_Form:Hide();
+											else
+											GameTooltip:SetText(("Plugin not installed"), 1.0, 0.8, 0.0, 1 );
+										end
+										</OnClick>
+									</Scripts>
+						  </Button>
+						  
+						   <!-- PRIEST BUTTON -->
+						  <Button name="GoHv5_DeathKnight_MenuButtonPriest">
+							<Size>
+							  <!-- SIZE PERCENTAGE -->
+							  <AbsDimension x="51" y="51" />
+							</Size>
+							<Anchors>
+							  <Anchor point="TOPLEFT">
+								<Offset>
+								  <!-- LOCATION POSITION -->
+								  <AbsDimension x="480" y="-142" />
+								</Offset>
+							  </Anchor>
+							</Anchors>
+							<NormalTexture file="interface\AddOns\GoH\Images\GoH_v5_Menu_Priest_Normal">
+							  <!-- AREA OF IMAGE TO LOAD UP -->
+							  <TexCoords left="0" right="0.8" top="0" bottom="0.8" />
+							</NormalTexture>
+							<PushedTexture file="interface\AddOns\GoH\Images\GoH_v5_Menu_Priest_Normal">
+							  <!-- AREA OF IMAGE TO LOAD UP -->
+							  <TexCoords left="0" right="0.8" top="0" bottom="0.8" />
+							</PushedTexture>
+							<DisabledTexture file="interface\AddOns\GoH\Images\GoH_v5_Menu_Priest_Uninstalled">
+							  <!-- AREA OF IMAGE TO LOAD UP -->
+							  <TexCoords left="0" right="0.8" top="0" bottom="0.8" />
+							</DisabledTexture>
+							<HighlightTexture file="interface\AddOns\GoH\Images\GoH_v5_Menu_Priest_Selected" alphaMode="ADD">
+							  <!-- AREA OF IMAGE TO LOAD UP -->
+							  <TexCoords left="0" right="0.8" top="0" bottom="0.8" />
+							</HighlightTexture>
+							<ButtonText name="$parentGoHv5_Settings_MenuButtonPriestText">
+							  <FontHeight>
+								<AbsValue val="10" />
+							  </FontHeight>
+							</ButtonText>
+							<NormalFont style="GameFontNormal" />
+							<HighlightFont style="GameFontHighlight" />
+							<DisabledFont style="GameFontDisable" />
+									<Scripts>
+										<OnEnter>
+											GameTooltip:SetOwner(self, "ANCHOR_TOP");
+											GameTooltip:SetText(("PRIEST"), 1.0, 0.8, 0.0, 1 );
+											GameTooltip:Show(); 
+										</OnEnter>
+										<OnLeave>
+											GameTooltip:Hide();
+										</OnLeave>
+										<OnClick>
+												if (IsAddOnLoaded("GoH_Priest")) then
+											GoH_Priest_Form:Show();
+											GoH_DeathKnight_Form:Hide();
+											else
+											GameTooltip:SetText(("Plugin not installed"), 1.0, 0.8, 0.0, 1 );
+										end
+										</OnClick>
+									</Scripts>
+						  </Button>
+						  
+						   <!-- ROGUE BUTTON -->
+						  <Button name="GoHv5_DeathKnight_MenuButtonRogue">
+							<Size>
+							  <!-- SIZE PERCENTAGE -->
+							  <AbsDimension x="51" y="51" />
+							</Size>
+							<Anchors>
+							  <Anchor point="TOPLEFT">
+								<Offset>
+								  <!-- LOCATION POSITION -->
+								  <AbsDimension x="519" y="-142" />
+								</Offset>
+							  </Anchor>
+							</Anchors>
+							<NormalTexture file="interface\AddOns\GoH\Images\GoH_v5_Menu_Rogue_Normal">
+							  <!-- AREA OF IMAGE TO LOAD UP -->
+							  <TexCoords left="0" right="0.8" top="0" bottom="0.8" />
+							</NormalTexture>
+							<PushedTexture file="interface\AddOns\GoH\Images\GoH_v5_Menu_Rogue_Normal">
+							  <!-- AREA OF IMAGE TO LOAD UP -->
+							  <TexCoords left="0" right="0.8" top="0" bottom="0.8" />
+							</PushedTexture>
+							<DisabledTexture file="interface\AddOns\GoH\Images\GoH_v5_Menu_Rogue_Uninstalled">
+							  <!-- AREA OF IMAGE TO LOAD UP -->
+							  <TexCoords left="0" right="0.8" top="0" bottom="0.8" />
+							</DisabledTexture>
+							<HighlightTexture file="interface\AddOns\GoH\Images\GoH_v5_Menu_Rogue_Selected" alphaMode="ADD">
+							  <!-- AREA OF IMAGE TO LOAD UP -->
+							  <TexCoords left="0" right="0.8" top="0" bottom="0.8" />
+							</HighlightTexture>
+							<ButtonText name="$parentGoHv5_Settings_MenuButtonRogueText">
+							  <FontHeight>
+								<AbsValue val="10" />
+							  </FontHeight>
+							</ButtonText>
+							<NormalFont style="GameFontNormal" />
+							<HighlightFont style="GameFontHighlight" />
+							<DisabledFont style="GameFontDisable" />
+									<Scripts>
+										<OnEnter>
+											GameTooltip:SetOwner(self, "ANCHOR_TOP");
+											GameTooltip:SetText(("ROGUE"), 1.0, 0.8, 0.0, 1 );
+											GameTooltip:Show(); 
+										</OnEnter>
+										<OnLeave>
+											GameTooltip:Hide();
+										</OnLeave>
+										<OnClick>
+													if (IsAddOnLoaded("GoH_Rogue")) then
+											GoH_Rogue_Form:Show();
+											GoH_DeathKnight_Form:Hide();
+											else
+											GameTooltip:SetText(("Plugin not installed"), 1.0, 0.8, 0.0, 1 );
+										end
+										</OnClick>
+									</Scripts>
+						  </Button>
+						  
+						  <!-- SHAMAN BUTTON -->
+						  <Button name="GoHv5_DeathKnight_MenuButtonShaman">
+							<Size>
+							  <!-- SIZE PERCENTAGE -->
+							  <AbsDimension x="51" y="51" />
+							</Size>
+							<Anchors>
+							  <Anchor point="TOPLEFT">
+								<Offset>
+								  <!-- LOCATION POSITION -->
+								  <AbsDimension x="558" y="-142" />
+								</Offset>
+							  </Anchor>
+							</Anchors>
+							<NormalTexture file="interface\AddOns\GoH\Images\GoH_v5_Menu_Shaman_Normal">
+							  <!-- AREA OF IMAGE TO LOAD UP -->
+							  <TexCoords left="0" right="0.8" top="0" bottom="0.8" />
+							</NormalTexture>
+							<PushedTexture file="interface\AddOns\GoH\Images\GoH_v5_Menu_Shaman_Normal">
+							  <!-- AREA OF IMAGE TO LOAD UP -->
+							  <TexCoords left="0" right="0.8" top="0" bottom="0.8" />
+							</PushedTexture>
+							<DisabledTexture file="interface\AddOns\GoH\Images\GoH_v5_Menu_Shaman_Uninstalled">
+							  <!-- AREA OF IMAGE TO LOAD UP -->
+							  <TexCoords left="0" right="0.8" top="0" bottom="0.8" />
+							</DisabledTexture>
+							<HighlightTexture file="interface\AddOns\GoH\Images\GoH_v5_Menu_Shaman_Selected" alphaMode="ADD">
+							  <!-- AREA OF IMAGE TO LOAD UP -->
+							  <TexCoords left="0" right="0.8" top="0" bottom="0.8" />
+							</HighlightTexture>
+							<ButtonText name="$parentGoHv5_Settings_MenuButtonShamanText">
+							  <FontHeight>
+								<AbsValue val="10" />
+							  </FontHeight>
+							</ButtonText>
+							<NormalFont style="GameFontNormal" />
+							<HighlightFont style="GameFontHighlight" />
+							<DisabledFont style="GameFontDisable" />
+									<Scripts>
+										<OnEnter>
+											GameTooltip:SetOwner(self, "ANCHOR_TOP");
+											GameTooltip:SetText(("SHAMAN"), 1.0, 0.8, 0.0, 1 );
+											GameTooltip:Show(); 
+										</OnEnter>
+										<OnLeave>
+											GameTooltip:Hide();
+										</OnLeave>
+										<OnClick>
+													if (IsAddOnLoaded("GoH_Shaman")) then
+											GoH_Shaman_Form:Show();
+											GoH_DeathKnight_Form:Hide();
+											else
+											GameTooltip:SetText(("Plugin not installed"), 1.0, 0.8, 0.0, 1 );
+										end
+										</OnClick>
+									</Scripts>
+						  </Button>
+						  
+						  <!-- WARLOCK BUTTON -->
+						  <Button name="GoHv5_DeathKnight_MenuButtonWarlock">
+							<Size>
+							  <!-- SIZE PERCENTAGE -->
+							  <AbsDimension x="51" y="51" />
+							</Size>
+							<Anchors>
+							  <Anchor point="TOPLEFT">
+								<Offset>
+								  <!-- LOCATION POSITION -->
+								  <AbsDimension x="597" y="-142" />
+								</Offset>
+							  </Anchor>
+							</Anchors>
+							<NormalTexture file="interface\AddOns\GoH\Images\GoH_v5_Menu_Warlock_Normal">
+							  <!-- AREA OF IMAGE TO LOAD UP -->
+							  <TexCoords left="0" right="0.8" top="0" bottom="0.8" />
+							</NormalTexture>
+							<PushedTexture file="interface\AddOns\GoH\Images\GoH_v5_Menu_Warlock_Normal">
+							  <!-- AREA OF IMAGE TO LOAD UP -->
+							  <TexCoords left="0" right="0.8" top="0" bottom="0.8" />
+							</PushedTexture>
+							<DisabledTexture file="interface\AddOns\GoH\Images\GoH_v5_Menu_Warlock_Uninstalled">
+							  <!-- AREA OF IMAGE TO LOAD UP -->
+							  <TexCoords left="0" right="0.8" top="0" bottom="0.8" />
+							</DisabledTexture>
+							<HighlightTexture file="interface\AddOns\GoH\Images\GoH_v5_Menu_Warlock_Selected" alphaMode="ADD">
+							  <!-- AREA OF IMAGE TO LOAD UP -->
+							  <TexCoords left="0" right="0.8" top="0" bottom="0.8" />
+							</HighlightTexture>
+							<ButtonText name="$parentGoHv5_Settings_MenuButtonWarlockText">
+							  <FontHeight>
+								<AbsValue val="10" />
+							  </FontHeight>
+							</ButtonText>
+							<NormalFont style="GameFontNormal" />
+							<HighlightFont style="GameFontHighlight" />
+							<DisabledFont style="GameFontDisable" />
+									<Scripts>
+										<OnEnter>
+											GameTooltip:SetOwner(self, "ANCHOR_TOP");
+											GameTooltip:SetText(("WARLOCK"), 1.0, 0.8, 0.0, 1 );
+											GameTooltip:Show();
+										</OnEnter>
+										<OnLeave>
+											GameTooltip:Hide();
+										</OnLeave>
+										<OnClick>
+														if (IsAddOnLoaded("GoH_Warlock")) then
+											GoH_Warlock_Form:Show();
+											GoH_DeathKnight_Form:Hide();
+											else
+											GameTooltip:SetText(("Plugin not installed"), 1.0, 0.8, 0.0, 1 );
+										end
+										</OnClick>
+									</Scripts>
+						  </Button>
+						  
+						  <!-- WARRIOR BUTTON -->
+						  <Button name="GoHv5_DeathKnight_MenuButtonWarrior">
+							<Size>
+							  <!-- SIZE PERCENTAGE -->
+							  <AbsDimension x="51" y="51" />
+							</Size>
+							<Anchors>
+							  <Anchor point="TOPLEFT">
+								<Offset>
+								  <!-- LOCATION POSITION -->
+								  <AbsDimension x="636" y="-142" />
+								</Offset>
+							  </Anchor>
+							</Anchors>
+							<NormalTexture file="interface\AddOns\GoH\Images\GoH_v5_Menu_Warrior_Normal">
+							  <!-- AREA OF IMAGE TO LOAD UP -->
+							  <TexCoords left="0" right="0.8" top="0" bottom="0.8" />
+							</NormalTexture>
+							<PushedTexture file="interface\AddOns\GoH\Images\GoH_v5_Menu_Warrior_Normal">
+							  <!-- AREA OF IMAGE TO LOAD UP -->
+							  <TexCoords left="0" right="0.8" top="0" bottom="0.8" />
+							</PushedTexture>
+							<DisabledTexture file="interface\AddOns\GoH\Images\GoH_v5_Menu_Warrior_Uninstalled">
+							  <!-- AREA OF IMAGE TO LOAD UP -->
+							  <TexCoords left="0" right="0.8" top="0" bottom="0.8" />
+							</DisabledTexture>
+							<HighlightTexture file="interface\AddOns\GoH\Images\GoH_v5_Menu_Warrior_Selected" alphaMode="ADD">
+							  <!-- AREA OF IMAGE TO LOAD UP -->
+							  <TexCoords left="0" right="0.8" top="0" bottom="0.8" />
+							</HighlightTexture>
+							<ButtonText name="$parentGoHv5_Settings_MenuButtonWarriorText">
+							  <FontHeight>
+								<AbsValue val="10" />
+							  </FontHeight>
+							</ButtonText>
+							<NormalFont style="GameFontNormal" />
+							<HighlightFont style="GameFontHighlight" />
+							<DisabledFont style="GameFontDisable" />
+									<Scripts>
+										<OnEnter>
+											GameTooltip:SetOwner(self, "ANCHOR_TOP");
+											GameTooltip:SetText(("WARRIOR"), 1.0, 0.8, 0.0, 1 );
+											GameTooltip:Show(); 
+										</OnEnter>
+										<OnLeave>
+											GameTooltip:Hide();
+										</OnLeave>
+										<OnClick>
+														if (IsAddOnLoaded("GoH_Warrior")) then
+											GoH_Warrior_Form:Show();
+											GoH_DeathKnight_Form:Hide();
+											else
+											GameTooltip:SetText(("Plugin not installed"), 1.0, 0.8, 0.0, 1 );
+										end
+										</OnClick>
+									</Scripts>
+						  </Button>
+						  
+						 
+						  
+						  <!-- DEMON HUNTER BUTTON -->
+						  <Button name="GoHv5_DeathKnight_MenuButtonDemonHunter">
+							<Size>
+							  <!-- SIZE PERCENTAGE -->
+							  <AbsDimension x="51" y="51" />
+							</Size>
+							<Anchors>
+							  <Anchor point="TOPLEFT">
+								<Offset>
+								  <!-- LOCATION POSITION -->
+								  <AbsDimension x="676" y="-140" />
+								</Offset>
+							  </Anchor>
+							</Anchors>
+							<NormalTexture file="interface\AddOns\GoH\Images\GoH_v5_Menu_Hunter_Normal">
+							  <!-- AREA OF IMAGE TO LOAD UP -->
+							  <TexCoords left="0" right="0.8" top="0" bottom="0.8" />
+							</NormalTexture>
+							<PushedTexture file="interface\AddOns\GoH\Images\GoH_v5_Menu_Hunter_Normal">
+							  <!-- AREA OF IMAGE TO LOAD UP -->
+							  <TexCoords left="0" right="0.8" top="0" bottom="0.8" />
+							</PushedTexture>
+							<DisabledTexture file="interface\AddOns\GoH\Images\GoH_v5_Menu_Hunter_Uninstalled">
+							  <!-- AREA OF IMAGE TO LOAD UP -->
+							  <TexCoords left="0" right="0.8" top="0" bottom="0.8" />
+							</DisabledTexture>
+							<HighlightTexture file="interface\AddOns\GoH\Images\GoH_v5_Menu_Hunter_Selected" alphaMode="ADD">
+							  <!-- AREA OF IMAGE TO LOAD UP -->
+							  <TexCoords left="0" right="0.8" top="0" bottom="0.8" />
+							</HighlightTexture>
+							<ButtonText name="$parentGoHv5_Settings_MenuButtonHunterText">
+							  <FontHeight>
+								<AbsValue val="10" />
+							  </FontHeight>
+							</ButtonText>
+							<NormalFont style="GameFontNormal" />
+							<HighlightFont style="GameFontHighlight" />
+							<DisabledFont style="GameFontDisable" />
+									<Scripts>
+										<OnLoad>
+											self:RegisterForClicks("LeftButtonUp","RightButtonUp")
+										</OnLoad>
+										<OnEnter>
+											GameTooltip:SetOwner(self, "ANCHOR_TOP");
+											GameTooltip:SetText(("DEMON HUNTER"), 1.0, 0.8, 0.0, 1 );
+											GameTooltip:Show(); 
+										</OnEnter>
+										<OnLeave>
+											GameTooltip:Hide();
+										</OnLeave>
+										<OnClick>
+											if (IsAddOnLoaded("GoH_DemonHunter")) then
+											GoH_DemonHunter_Form:Show();
+											GoH_DeathKnight_Form:Hide();else
+											GameTooltip:SetText(("Plugin not installed"), 1.0, 0.8, 0.0, 1 );
+										end
+										</OnClick>
+									</Scripts>
+						  </Button>
+
+		<!-- ################################################################## -->
+		<!-- ################################################################## -->
+		<!-- ################################################################## -->
+		<!-- ################################################################## -->
+		<!-- ################################################################## -->
+		<!-- ################################################################## -->
+		<!-- ################################################################## -->
+		<!-- ################################################################## -->
+		<!-- ################################################################## -->
+		<!-- ################################################################## -->
+		<!-- ################################################################## -->
+		<!-- ################################################################## -->
+		<!-- ################################################################## -->
+		<!-- ################################################################## -->
+		<!-- ################################################################## -->
+		<!-- ################################################################## -->
+		<!-- ################################################################## -->
+		<!-- ################################################################## -->
+		<!-- ################################################################## -->
+		<!-- ################################################################## -->
+		<!-- ################################################################## -->
+
+						  <!-- STUFF FOR ALL FRAMES -->
+						  <Frame name="GoH_DeathKnight_AllFrames_Frame" hidden="false">
+										<Size>
+										  <AbsDimension x="1024" y="1024" />
+										</Size>
+										<Anchors>
+										  <Anchor point="TOPLEFT">
+											<Offset>
+											  <AbsDimension x="3" y="-3" />
+											</Offset>
+										  </Anchor>
+										</Anchors>
+										<Frames>
+
+												  
+												  <!-- ################################################################## -->
+												  				
+												  				<!-- ################################################################## -->
+
+													  <!-- ######################################### -->
+													  <!-- ######################################### -->
+													  <!-- ######################################### -->
+
+												  <!-- ################################################################## -->
+												   <!-- PAGE TAB ONE BUTTON ICON -->
+												   <Button name="GoH_DEATHKNIGHT_PAGE_TAB_ONE_BUTTON_ICON">
+													<Size>
+													  <AbsDimension x="60" y="80" />
+													</Size>
+														 <Anchors>
+																 <Anchor point="TOPLEFT">
+																	 <Offset>
+																			<AbsDimension x="842" y="-167" />
+																	 </Offset>
+																 </Anchor>
+														 </Anchors>
+														 <NormalTexture file="Interface\AddOns\GoH\Images\GoH_Tab_Down">
+														   <TexCoords left="0" right="0.4" top="0" bottom="0.6" />
+														 </NormalTexture>
+														 <PushedTexture file="Interface\AddOns\GoH\Images\GoH_Tab_Down">
+														   <TexCoords left="0" right="0.4" top="0" bottom="0.6" />
+														 </PushedTexture>
+														 <DisabledTexture file="Interface\AddOns\GoH\Images\GoH_Tab_Normal">
+														   <TexCoords left="0" right="0.4" top="0" bottom="0.6" />
+														 </DisabledTexture>
+														 <HighlightTexture file="Interface\AddOns\GoH\Images\GoH_Tab_Over">
+														   <TexCoords left="0" right="0.4" top="0" bottom="0.6" />
+														 </HighlightTexture>
+																 <ButtonText name="$parentGoH_DEATHKNIGHT_PAGE_TAB_ONE_BUTTON_ICON">
+																   <FontHeight>
+																	 <AbsValue val="10" />
+																   </FontHeight>
+																 </ButtonText>
+																 <NormalFont style="GameFontNormal" />
+																 <HighlightFont style="GameFontHighlight" />
+																 <DisabledFont style="GameFontDisable" />
+																<Scripts>
+																		<OnEnter>
+																			GameTooltip:SetOwner(self, "ANCHOR_TOP");
+																			GameTooltip:SetText("Page One.", 1.0, 0.8, 0.0, 1 );
+																			GameTooltip:AddLine("Death Knight Options", 1.0, 0.8, 0.0, 1 );
+																			GameTooltip:Show(); 
+																		</OnEnter>
+																		<OnLeave>
+																			GameTooltip:Hide();
+																		</OnLeave>
+																		<OnClick>
+																			GoH_Deathknight_MenuButton_Page_One_OnClick();
+																		</OnClick>
+																</Scripts>
+												  </Button>
+												  <!-- ################################################################## -->
+												  <!-- ################################################################## -->
+												   <!-- PAGE TAB TWO BUTTON ICON -->
+												   <Button name="GoH_DEATHKNIGHT_PAGE_TAB_TWO_BUTTON_ICON">
+													<Size>
+													  <AbsDimension x="60" y="80" />
+													</Size>
+														 <Anchors>
+																 <Anchor point="TOPLEFT">
+																	 <Offset>
+																			<AbsDimension x="842" y="-242" />
+																	 </Offset>
+																 </Anchor>
+														 </Anchors>
+														 <NormalTexture file="Interface\AddOns\GoH\Images\GoH_Tab_Down">
+														   <TexCoords left="0" right="0.4" top="0" bottom="0.6" />
+														 </NormalTexture>
+														 <PushedTexture file="Interface\AddOns\GoH\Images\GoH_Tab_Down">
+														   <TexCoords left="0" right="0.4" top="0" bottom="0.6" />
+														 </PushedTexture>
+														 <DisabledTexture file="Interface\AddOns\GoH\Images\GoH_Tab_Normal">
+														   <TexCoords left="0" right="0.4" top="0" bottom="0.6" />
+														 </DisabledTexture>
+														 <HighlightTexture file="Interface\AddOns\GoH\Images\GoH_Tab_Over">
+														   <TexCoords left="0" right="0.4" top="0" bottom="0.6" />
+														 </HighlightTexture>
+																 <ButtonText name="$parentGoH_DEATHKNIGHT_PAGE_TAB_TWO_BUTTON_ICON">
+																   <FontHeight>
+																	 <AbsValue val="10" />
+																   </FontHeight>
+																 </ButtonText>
+																 <NormalFont style="GameFontNormal" />
+																 <HighlightFont style="GameFontHighlight" />
+																 <DisabledFont style="GameFontDisable" />
+																<Scripts>
+																		<OnEnter>
+																			GameTooltip:SetOwner(self, "ANCHOR_TOP");
+																			GameTooltip:SetText("Page Two.", 1.0, 0.8, 0.0, 1 );
+																			GameTooltip:AddLine("Death Knight Options", 1.0, 0.8, 0.0, 1 );
+																			
+																			GameTooltip:Show(); 
+																		</OnEnter>
+																		<OnLeave>
+																			GameTooltip:Hide();
+																		</OnLeave>
+																		<OnClick>
+																			GoH_Deathknight_MenuButton_Page_Two_OnClick();
+																		</OnClick>
+																</Scripts>
+												  </Button>
+												  <!-- ################################################################## -->
+
+
+													  <!-- ######################################### -->
+													  <!-- ######################################### -->
+													  <!-- ######################################### -->
+
+										</Frames>
+										<Layers>
+
+										<!-- FACTION ART -->
+										  <Layer level="OVERLAY">
+											<Texture name="DeathKnight_FactionPicTexture" file="interface\AddOns\GoH\Images\GoH_v5_BackGround_Faction_Horde" alphaMode="ADD" />
+										  </Layer>
+
+										<!-- GENDER LABEL -->
+										  <Layer>
+											<Texture name="DeathKnight_Female_Texture" file="interface\AddOns\GoH\Images\GoH_v5_BackGround_Gender_Female">
+											  <Size>
+												<AbsDimension x="128" y="128"/>
+											  </Size>
+											  <Anchors>
+												<Anchor point="TOPLEFT">
+												  <Offset>
+													<AbsDimension x="50" y="10"/>
+												  </Offset>
+												</Anchor>
+											  </Anchors>
+											  <TexCoords left="0" right="1" top="0" bottom="1"/>
+											</Texture>
+										  </Layer>
+
+										<!-- VERSION LABEL -->
+											<Layer level="OVERLAY">
+												<FontString name="Label_GoHv5_DeathKnight_VERSION" inherits="GameFontNormalSmall" text="version 5 - beta" justifyV="TOP" justifyH="RIGHT">
+													<Size>
+														<AbsDimension x="300" y="20" />
+													</Size>
+													<Anchors>
+														<Anchor point="TOPRIGHT">
+															<Offset x="-300" y="-110" />
+														</Anchor>
+													</Anchors>
+														<Color r="1" g="1" b="1" />
+												</FontString>
+											</Layer>
+										</Layers>
+						  </Frame>
+
+		<!-- ################################################################## -->
+		<!-- ################################################################## -->
+		<!-- ################################################################## -->
+		<!-- ################################################################## -->
+		<!-- ################################################################## -->
+		<!-- ################################################################## -->
+		<!-- ################################################################## -->
+		<!-- ################################################################## -->
+		<!-- ################################################################## -->
+		<!-- ################################################################## -->
+		<!-- ################################################################## -->
+		<!-- ################################################################## -->
+		<!-- ################################################################## -->
+		<!-- ################################################################## -->
+		<!-- ################################################################## -->
+		<!-- ################################################################## -->
+		<!-- ################################################################## -->
+		<!-- ################################################################## -->
+		<!-- ################################################################## -->
+		<!-- ################################################################## -->
+		<!-- ################################################################## -->
+
+						   <!-- DEATH KNIGHT PAGE 1 -->
+						  <Frame name="GoH_DeathKnight_Frame" hidden="false">
+										<Size>
+										  <AbsDimension x="1024" y="1024" />
+										</Size>
+										<Anchors>
+										  <Anchor point="TOPLEFT">
+											<Offset>
+											  <AbsDimension x="3" y="-3" />
+											</Offset>
+										  </Anchor>
+										</Anchors>
+       									<Frames>
+												  <!-- ################################################################## -->
+												   
+												   
+												  <!-- ################################################################## -->
+												  <!-- ################################################################## -->
+												   <!-- PLAY LOGIN SOUND BUTTON ICON -->
+												   <Button name="GoH_DEATHKNIGHT_PLAY_LOGIN_SOUND">
+													<Size>
+													  <AbsDimension x="25" y="25" />
+													</Size>
+														 <Anchors>
+																 <Anchor point="TOPLEFT">
+																	 <Offset>
+																			<AbsDimension x="95" y="-180" />
+																	 </Offset>
+																 </Anchor>
+														 </Anchors>
+														 <NormalTexture file="DeathKnight_Death_Grip_Icon">
+														   <TexCoords left="0" right="1" top="0" bottom="1" />
+														 </NormalTexture>
+														 <PushedTexture file="DeathKnight_Death_Grip_Icon">
+														   <TexCoords left="0" right="1" top="0" bottom="1" />
+														 </PushedTexture>
+														 <DisabledTexture file="DeathKnight_Death_Grip_Icon">
+														   <TexCoords left="0" right="1" top="0" bottom="1" />
+														 </DisabledTexture>
+														 <HighlightTexture file="DeathKnight_Death_Grip_Icon" alphaMode="ADD">
+														   <TexCoords left="0" right="1" top="0" bottom="1" />
+														 </HighlightTexture>
+																 <ButtonText name="$parentGoH_DEATHKNIGHT_PLAY_LOGIN_SOUND">
+																   <FontHeight>
+																	 <AbsValue val="10" />
+																   </FontHeight>
+																 </ButtonText>
+																 <NormalFont style="GameFontNormal" />
+																 <HighlightFont style="GameFontHighlight" />
+																 <DisabledFont style="GameFontDisable" />
+																<Scripts>
+																		<OnEnter>
+																			GameTooltip:SetOwner(self, "ANCHOR_TOP");
+																			GameTooltip:SetText("Play Login Sound", 1.0, 0.8, 0.0, 1 );
+																			GameTooltip:Show(); 
+																		</OnEnter>
+																		<OnLeave>
+																			GameTooltip:Hide();
+																		</OnLeave>
+																		<OnClick>
+																			GoH_Deathknight_MenuButton_PlayLoginSound_OnClick();
+																		</OnClick>
+																</Scripts>
+												  </Button>
+												  <!-- Wraith Walk BUTTON ICON -->
+												   <Button name="GoH_DEATHKNIGHT_WRAITH_WALK_ICON">
+													<Size>
+													  <AbsDimension x="25" y="25" />
+													</Size>
+														 <Anchors>
+																 <Anchor point="TOPLEFT">
+																	 <Offset>
+																			<AbsDimension x="95" y="-210" />
+																	 </Offset>
+																 </Anchor>
+														 </Anchors>
+														 <NormalTexture file="DeathKnight_Death_Grip_Icon">
+														   <TexCoords left="0" right="1" top="0" bottom="1" />
+														 </NormalTexture>
+														 <PushedTexture file="DeathKnight_Death_Grip_Icon">
+														   <TexCoords left="0" right="1" top="0" bottom="1" />
+														 </PushedTexture>
+														 <DisabledTexture file="DeathKnight_Death_Grip_Icon">
+														   <TexCoords left="0" right="1" top="0" bottom="1" />
+														 </DisabledTexture>
+														 <HighlightTexture file="DeathKnight_Death_Grip_Icon" alphaMode="ADD">
+														   <TexCoords left="0" right="1" top="0" bottom="1" />
+														 </HighlightTexture>
+																 <ButtonText name="$parentGoH_DEATHKNIGHT_WRAITH_WALK_ICON">
+																   <FontHeight>
+																	 <AbsValue val="10" />
+																   </FontHeight>
+																 </ButtonText>
+																 <NormalFont style="GameFontNormal" />
+																 <HighlightFont style="GameFontHighlight" />
+																 <DisabledFont style="GameFontDisable" />
+																<Scripts>
+																		<OnEnter>
+																	
+																			GameTooltip:SetOwner(self, "ANCHOR_TOP");
+																			GameTooltip:SetText("Wraith Walk", 1.0, 0.8, 0.0, 1 );
+																			
+																			GameTooltip:Show(); 
+																		</OnEnter>
+																		<OnLeave>
+																			GameTooltip:Hide();
+																		</OnLeave>
+																		<OnClick>
+																			GoH_Deathknight_MenuButton_Wraith_Walk_OnClick();
+																		</OnClick>
+																</Scripts>
+												  </Button>
+												  <!-- ASPHYXIATE BUTTON ICON -->
+												   <Button name="GoH_DEATHKNIGHT_ASPHYXIATE_ICON">
+													<Size>
+													  <AbsDimension x="25" y="25" />
+													</Size>
+														 <Anchors>
+																 <Anchor point="TOPLEFT">
+																	 <Offset>
+																			<AbsDimension x="95" y="-240" />
+																	 </Offset>
+																 </Anchor>
+														 </Anchors>
+														 <NormalTexture file="DeathKnight_Death_Grip_Icon">
+														   <TexCoords left="0" right="1" top="0" bottom="1" />
+														 </NormalTexture>
+														 <PushedTexture file="DeathKnight_Death_Grip_Icon">
+														   <TexCoords left="0" right="1" top="0" bottom="1" />
+														 </PushedTexture>
+														 <DisabledTexture file="DeathKnight_Death_Grip_Icon">
+														   <TexCoords left="0" right="1" top="0" bottom="1" />
+														 </DisabledTexture>
+														 <HighlightTexture file="DeathKnight_Death_Grip_Icon" alphaMode="ADD">
+														   <TexCoords left="0" right="1" top="0" bottom="1" />
+														 </HighlightTexture>
+																 <ButtonText name="$parentGoH_DEATHKNIGHT_ASPHYXIATE_ICON">
+																   <FontHeight>
+																	 <AbsValue val="10" />
+																   </FontHeight>
+																 </ButtonText>
+																 <NormalFont style="GameFontNormal" />
+																 <HighlightFont style="GameFontHighlight" />
+																 <DisabledFont style="GameFontDisable" />
+																<Scripts>
+																		<OnEnter>
+																			GameTooltip:SetOwner(self, "ANCHOR_TOP");
+																			GameTooltip:SetText("Asphyxiate", 1.0, 0.8, 0.0, 1 );
+																			
+																			GameTooltip:Show(); 
+																		</OnEnter>
+																		<OnLeave>
+																			GameTooltip:Hide();
+																		</OnLeave>
+																		<OnClick>
+																			GoH_Deathknight_MenuButton_Asphyxiate_OnClick();
+																		</OnClick>
+																</Scripts>
+												  </Button>
+												  <!-- ################################################################## -->
+												  <!-- ################################################################## -->
+												   <!-- DEATH AND DECAY BUTTON ICON -->
+												   <Button name="GoH_DEATHKNIGHT_DEATH_AND_DECAY_ICON">
+													<Size>
+													  <AbsDimension x="25" y="25" />
+													</Size>
+														 <Anchors>
+																 <Anchor point="TOPLEFT">
+																	 <Offset>
+																			<AbsDimension x="95" y="-270" />
+																	 </Offset>
+																 </Anchor>
+														 </Anchors>
+														 <NormalTexture file="DeathKnight_Death_Grip_Icon">
+														   <TexCoords left="0" right="1" top="0" bottom="1" />
+														 </NormalTexture>
+														 <PushedTexture file="DeathKnight_Death_Grip_Icon">
+														   <TexCoords left="0" right="1" top="0" bottom="1" />
+														 </PushedTexture>
+														 <DisabledTexture file="DeathKnight_Death_Grip_Icon">
+														   <TexCoords left="0" right="1" top="0" bottom="1" />
+														 </DisabledTexture>
+														 <HighlightTexture file="DeathKnight_Death_Grip_Icon" alphaMode="ADD">
+														   <TexCoords left="0" right="1" top="0" bottom="1" />
+														 </HighlightTexture>
+																 <ButtonText name="$parentGoH_DEATHKNIGHT_DEATH_AND_DECAY_ICON">
+																   <FontHeight>
+																	 <AbsValue val="10" />
+																   </FontHeight>
+																 </ButtonText>
+																 <NormalFont style="GameFontNormal" />
+																 <HighlightFont style="GameFontHighlight" />
+																 <DisabledFont style="GameFontDisable" />
+																<Scripts>
+																		<OnEnter>
+																			GameTooltip:SetOwner(self, "ANCHOR_TOP");
+																			GameTooltip:SetText("Death and Decay", 1.0, 0.8, 0.0, 1 );
+																			
+																			GameTooltip:Show(); 
+																		</OnEnter>
+																		<OnLeave>
+																			GameTooltip:Hide();
+																		</OnLeave>
+																		<OnClick>
+																			GoH_Deathknight_MenuButton_Death_and_Decay_OnClick();
+																		</OnClick>
+																</Scripts>
+												  </Button>
+												  <!-- ################################################################## -->
+												  <!-- ################################################################## -->
+												   <!-- DEATH COIL BUTTON ICON -->
+												   <Button name="GoH_DEATHKNIGHT_DEATH_COIL_ICON">
+													<Size>
+													  <AbsDimension x="25" y="25" />
+													</Size>
+														 <Anchors>
+																 <Anchor point="TOPLEFT">
+																	 <Offset>
+																			<AbsDimension x="95" y="-390" />
+																	 </Offset>
+																 </Anchor>
+														 </Anchors>
+														 <NormalTexture file="DeathKnight_Death_Grip_Icon">
+														   <TexCoords left="0" right="1" top="0" bottom="1" />
+														 </NormalTexture>
+														 <PushedTexture file="DeathKnight_Death_Grip_Icon">
+														   <TexCoords left="0" right="1" top="0" bottom="1" />
+														 </PushedTexture>
+														 <DisabledTexture file="DeathKnight_Death_Grip_Icon">
+														   <TexCoords left="0" right="1" top="0" bottom="1" />
+														 </DisabledTexture>
+														 <HighlightTexture file="DeathKnight_Death_Grip_Icon" alphaMode="ADD">
+														   <TexCoords left="0" right="1" top="0" bottom="1" />
+														 </HighlightTexture>
+																 <ButtonText name="$parentGoH_DEATHKNIGHT_DEATH_COIL_ICON">
+																   <FontHeight>
+																	 <AbsValue val="10" />
+																   </FontHeight>
+																 </ButtonText>
+																 <NormalFont style="GameFontNormal" />
+																 <HighlightFont style="GameFontHighlight" />
+																 <DisabledFont style="GameFontDisable" />
+																<Scripts>
+																		<OnEnter>
+																			GameTooltip:SetOwner(self, "ANCHOR_TOP");
+																			
+																			
+																			GameTooltip:SetText("Death Coil", 1.0, 0.8, 0.0, 1 );
+																			GameTooltip:Show(); 
+																		</OnEnter>
+																		<OnLeave>
+																			GameTooltip:Hide();
+																		</OnLeave>
+																		<OnClick>
+																			GoH_Deathknight_MenuButton_Death_Coil_OnClick();
+																		</OnClick>
+																</Scripts>
+												  </Button>
+												  <!-- ################################################################## -->
+												  <!-- ################################################################## -->
+												   <!-- EMPOWER RUNE WEAPON BUTTON ICON -->
+												   <Button name="GoH_DEATHKNIGHT_EMPOWER_RUNE_WEAPON_ICON">
+													<Size>
+													  <AbsDimension x="25" y="25" />
+													</Size>
+														 <Anchors>
+																 <Anchor point="TOPLEFT">
+																	 <Offset>
+																			<AbsDimension x="95" y="-420" />
+																	 </Offset>
+																 </Anchor>
+														 </Anchors>
+														 <NormalTexture file="DeathKnight_Death_Grip_Icon">
+														   <TexCoords left="0" right="1" top="0" bottom="1" />
+														 </NormalTexture>
+														 <PushedTexture file="DeathKnight_Death_Grip_Icon">
+														   <TexCoords left="0" right="1" top="0" bottom="1" />
+														 </PushedTexture>
+														 <DisabledTexture file="DeathKnight_Death_Grip_Icon">
+														   <TexCoords left="0" right="1" top="0" bottom="1" />
+														 </DisabledTexture>
+														 <HighlightTexture file="DeathKnight_Death_Grip_Icon" alphaMode="ADD">
+														   <TexCoords left="0" right="1" top="0" bottom="1" />
+														 </HighlightTexture>
+																 <ButtonText name="$parentGoH_DEATHKNIGHT_EMPOWER_RUNE_WEAPON_ICON">
+																   <FontHeight>
+																	 <AbsValue val="10" />
+																   </FontHeight>
+																 </ButtonText>
+																 <NormalFont style="GameFontNormal" />
+																 <HighlightFont style="GameFontHighlight" />
+																 <DisabledFont style="GameFontDisable" />
+																<Scripts>
+																		<OnEnter>
+																			GameTooltip:SetOwner(self, "ANCHOR_TOP");
+																			GameTooltip:SetText("Empower Rune Weapon", 1.0, 0.8, 0.0, 1 );
+																			GameTooltip:Show(); 
+																		</OnEnter>
+																		<OnLeave>
+																			GameTooltip:Hide();
+																		</OnLeave>
+																		<OnClick>
+																			GoH_Deathknight_MenuButton_Empower_Rune_Weapon_OnClick();
+																		</OnClick>
+																</Scripts>
+												  </Button>
+												  <!-- ICEBOUND FORTITUDE BUTTON ICON -->
+												   <Button name="GoH_DEATHKNIGHT_ICEBOUND_FORTITUDE_ICON">
+													<Size>
+													  <AbsDimension x="25" y="25" />
+													</Size>
+														 <Anchors>
+																 <Anchor point="TOPLEFT">
+																	 <Offset>
+																			<AbsDimension x="95" y="-450" />
+																	 </Offset>
+																 </Anchor>
+														 </Anchors>
+														 <NormalTexture file="DeathKnight_Death_Grip_Icon">
+														   <TexCoords left="0" right="1" top="0" bottom="1" />
+														 </NormalTexture>
+														 <PushedTexture file="DeathKnight_Death_Grip_Icon">
+														   <TexCoords left="0" right="1" top="0" bottom="1" />
+														 </PushedTexture>
+														 <DisabledTexture file="DeathKnight_Death_Grip_Icon">
+														   <TexCoords left="0" right="1" top="0" bottom="1" />
+														 </DisabledTexture>
+														 <HighlightTexture file="DeathKnight_Death_Grip_Icon" alphaMode="ADD">
+														   <TexCoords left="0" right="1" top="0" bottom="1" />
+														 </HighlightTexture>
+																 <ButtonText name="$parentGoH_DEATHKNIGHT_ICEBOUND_FORTITUDE_ICON">
+																   <FontHeight>
+																	 <AbsValue val="10" />
+																   </FontHeight>
+																 </ButtonText>
+																 <NormalFont style="GameFontNormal" />
+																 <HighlightFont style="GameFontHighlight" />
+																 <DisabledFont style="GameFontDisable" />
+																<Scripts>
+																		<OnEnter>
+																			GameTooltip:SetOwner(self, "ANCHOR_TOP");
+																			
+																			
+																			GameTooltip:SetText("Icebound Fortitude", 1.0, 0.8, 0.0, 1 );
+																			GameTooltip:Show(); 
+																		</OnEnter>
+																		<OnLeave>
+																			GameTooltip:Hide();
+																		</OnLeave>
+																		<OnClick>
+																			GoH_Deathknight_MenuButton_Icebound_Fortitude_OnClick();
+																		</OnClick>
+																</Scripts>
+												  </Button>
+												  <!-- ################################################################## -->
+												  <!-- ################################################################## -->
+												   <!-- ANTIMAGIC SHELL BUTTON ICON -->
+												   <Button name="GoH_DEATHKNIGHT_ANTIMAGIC_SHELL_ICON">
+													<Size>
+													  <AbsDimension x="25" y="25" />
+													</Size>
+														 <Anchors>
+																 <Anchor point="TOPLEFT">
+																	 <Offset>
+																			<AbsDimension x="295" y="-270" />
+																	 </Offset>
+																 </Anchor>
+														 </Anchors>
+														 <NormalTexture file="DeathKnight_Death_Grip_Icon">
+														   <TexCoords left="0" right="1" top="0" bottom="1" />
+														 </NormalTexture>
+														 <PushedTexture file="DeathKnight_Death_Grip_Icon">
+														   <TexCoords left="0" right="1" top="0" bottom="1" />
+														 </PushedTexture>
+														 <DisabledTexture file="DeathKnight_Death_Grip_Icon">
+														   <TexCoords left="0" right="1" top="0" bottom="1" />
+														 </DisabledTexture>
+														 <HighlightTexture file="DeathKnight_Death_Grip_Icon" alphaMode="ADD">
+														   <TexCoords left="0" right="1" top="0" bottom="1" />
+														 </HighlightTexture>
+																 <ButtonText name="$parentGoH_DEATHKNIGHT_ANTIMAGIC_SHELL_ICON">
+																   <FontHeight>
+																	 <AbsValue val="10" />
+																   </FontHeight>
+																 </ButtonText>
+																 <NormalFont style="GameFontNormal" />
+																 <HighlightFont style="GameFontHighlight" />
+																 <DisabledFont style="GameFontDisable" />
+																<Scripts>
+																		<OnEnter>
+																			GameTooltip:SetOwner(self, "ANCHOR_TOP");
+																			GameTooltip:SetText("AntiMagic Shell", 1.0, 0.8, 0.0, 1 );
+																			
+																			GameTooltip:Show(); 
+																		</OnEnter>
+																		<OnLeave>
+																			GameTooltip:Hide();
+																		</OnLeave>
+																		<OnClick>
+																			GoH_Deathknight_MenuButton_AntiMagic_Shell_OnClick();
+																		</OnClick>
+																</Scripts>
+												  </Button>
+												  <!-- ################################################################## -->
+												  <!-- ################################################################## -->
+												   <!-- ANTIMAGIC ZONE BUTTON ICON -->
+												   <Button name="GoH_DEATHKNIGHT_ANTIMAGIC_ZONE_ICON">
+													<Size>
+													  <AbsDimension x="25" y="25" />
+													</Size>
+														 <Anchors>
+																 <Anchor point="TOPLEFT">
+																	 <Offset>
+																			<AbsDimension x="295" y="-300" />
+																	 </Offset>
+																 </Anchor>
+														 </Anchors>
+														 <NormalTexture file="DeathKnight_Death_Grip_Icon">
+														   <TexCoords left="0" right="1" top="0" bottom="1" />
+														 </NormalTexture>
+														 <PushedTexture file="DeathKnight_Death_Grip_Icon">
+														   <TexCoords left="0" right="1" top="0" bottom="1" />
+														 </PushedTexture>
+														 <DisabledTexture file="DeathKnight_Death_Grip_Icon">
+														   <TexCoords left="0" right="1" top="0" bottom="1" />
+														 </DisabledTexture>
+														 <HighlightTexture file="DeathKnight_Death_Grip_Icon" alphaMode="ADD">
+														   <TexCoords left="0" right="1" top="0" bottom="1" />
+														 </HighlightTexture>
+																 <ButtonText name="$parentGoH_DEATHKNIGHT_ANTIMAGIC_ZONE_ICON">
+																   <FontHeight>
+																	 <AbsValue val="10" />
+																   </FontHeight>
+																 </ButtonText>
+																 <NormalFont style="GameFontNormal" />
+																 <HighlightFont style="GameFontHighlight" />
+																 <DisabledFont style="GameFontDisable" />
+																<Scripts>
+																		<OnEnter>
+																			GameTooltip:SetOwner(self, "ANCHOR_TOP");
+																			
+																			GameTooltip:SetText("AntiMagic Zone", 1.0, 0.8, 0.0, 1 );
+																			GameTooltip:AddLine("|cFFEDA55FNot Effected by INSTANCE MODE", 1.0, 0.8, 0.0, 1 );
+																			GameTooltip:Show(); 
+																		</OnEnter>
+																		<OnLeave>
+																			GameTooltip:Hide();
+																		</OnLeave>
+																		<OnClick>
+																			GoH_Deathknight_MenuButton_AntiMagic_Zone_OnClick();
+																		</OnClick>
+																</Scripts>
+												  </Button>
+												  <!-- ################################################################## -->
+												  <!-- ################################################################## -->
+												   <!-- ANTIMAGIC ZONE YELL BUTTON ICON -->
+												   <Button name="GoH_DEATHKNIGHT_ANTIMAGIC_ZONE_YELL_ICON">
+													<Size>
+													  <AbsDimension x="25" y="25" />
+													</Size>
+														 <Anchors>
+																 <Anchor point="TOPLEFT">
+																	 <Offset>
+																			<AbsDimension x="320" y="-300" />
+																	 </Offset>
+																 </Anchor>
+														 </Anchors>
+														 <NormalTexture file="DeathKnight_Death_Grip_Icon">
+														   <TexCoords left="0" right="1" top="0" bottom="1" />
+														 </NormalTexture>
+														 <PushedTexture file="DeathKnight_Death_Grip_Icon">
+														   <TexCoords left="0" right="1" top="0" bottom="1" />
+														 </PushedTexture>
+														 <DisabledTexture file="DeathKnight_Death_Grip_Icon">
+														   <TexCoords left="0" right="1" top="0" bottom="1" />
+														 </DisabledTexture>
+														 <HighlightTexture file="DeathKnight_Death_Grip_Icon" alphaMode="ADD">
+														   <TexCoords left="0" right="1" top="0" bottom="1" />
+														 </HighlightTexture>
+																 <ButtonText name="$parentGoH_DEATHKNIGHT_ANTIMAGIC_ZONE_YELL_ICON">
+																   <FontHeight>
+																	 <AbsValue val="10" />
+																   </FontHeight>
+																 </ButtonText>
+																 <NormalFont style="GameFontNormal" />
+																 <HighlightFont style="GameFontHighlight" />
+																 <DisabledFont style="GameFontDisable" />
+																<Scripts>
+																		<OnEnter>
+																			GameTooltip:SetOwner(self, "ANCHOR_TOP");
+																			
+																			GameTooltip:SetText("Get Under Here", 1.0, 0.8, 0.0, 1 );
+																			GameTooltip:AddLine("This feature work's in Dungeon and Raids Only", 1.0, 0.8, 0.0, 1 );
+																			GameTooltip:AddLine("|cFFEDA55FNot Effected by INSTANCE MODE", 1.0, 0.8, 0.0, 1 );
+																			GameTooltip:Show(); 
+																		</OnEnter>
+																		<OnLeave>
+																			GameTooltip:Hide();
+																		</OnLeave>
+																		<OnClick>
+																			GoH_Deathknight_MenuButton_AntiMagic_Zone_Yell_OnClick();
+																		</OnClick>
+																</Scripts>
+												  </Button>
+												  <!-- ################################################################## -->
+												  <!-- ################################################################## -->
+												   <!-- RAISE ALLY BUTTON ICON -->
+												   <Button name="GoH_DEATHKNIGHT_RAISE_ALLY_ICON">
+													<Size>
+													  <AbsDimension x="25" y="25" />
+													</Size>
+														 <Anchors>
+																 <Anchor point="TOPLEFT">
+																	 <Offset>
+																			<AbsDimension x="295" y="-330" />
+																	 </Offset>
+																 </Anchor>
+														 </Anchors>
+														 <NormalTexture file="DeathKnight_Death_Grip_Icon">
+														   <TexCoords left="0" right="1" top="0" bottom="1" />
+														 </NormalTexture>
+														 <PushedTexture file="DeathKnight_Death_Grip_Icon">
+														   <TexCoords left="0" right="1" top="0" bottom="1" />
+														 </PushedTexture>
+														 <DisabledTexture file="DeathKnight_Death_Grip_Icon">
+														   <TexCoords left="0" right="1" top="0" bottom="1" />
+														 </DisabledTexture>
+														 <HighlightTexture file="DeathKnight_Death_Grip_Icon" alphaMode="ADD">
+														   <TexCoords left="0" right="1" top="0" bottom="1" />
+														 </HighlightTexture>
+																 <ButtonText name="$parentGoH_DEATHKNIGHT_RAISE_ALLY_ICON">
+																   <FontHeight>
+																	 <AbsValue val="10" />
+																   </FontHeight>
+																 </ButtonText>
+																 <NormalFont style="GameFontNormal" />
+																 <HighlightFont style="GameFontHighlight" />
+																 <DisabledFont style="GameFontDisable" />
+																<Scripts>
+																		<OnEnter>
+																			GameTooltip:SetOwner(self, "ANCHOR_TOP");
+																			GameTooltip:SetText("Raise Ally", 1.0, 0.8, 0.0, 1 );
+																			GameTooltip:Show(); 
+																		</OnEnter>
+																		<OnLeave>
+																			GameTooltip:Hide();
+																		</OnLeave>
+																		<OnClick>
+																			GoH_Deathknight_MenuButton_Raise_Ally_OnClick();
+																		</OnClick>
+																</Scripts>
+												  </Button>
+												  <!-- ################################################################## -->
+												  <!-- ################################################################## -->
+												   <!-- DARK TRANSFORMATION BUTTON ICON -->
+												   <Button name="GoH_DEATHKNIGHT_DARK_TRANSFORMATION_ICON">
+													<Size>
+													  <AbsDimension x="25" y="25" />
+													</Size>
+														 <Anchors>
+																 <Anchor point="TOPLEFT">
+																	 <Offset>
+																			<AbsDimension x="295" y="-180" />
+																	 </Offset>
+																 </Anchor>
+														 </Anchors>
+														 <NormalTexture file="DeathKnight_Death_Grip_Icon">
+														   <TexCoords left="0" right="1" top="0" bottom="1" />
+														 </NormalTexture>
+														 <PushedTexture file="DeathKnight_Death_Grip_Icon">
+														   <TexCoords left="0" right="1" top="0" bottom="1" />
+														 </PushedTexture>
+														 <DisabledTexture file="DeathKnight_Death_Grip_Icon">
+														   <TexCoords left="0" right="1" top="0" bottom="1" />
+														 </DisabledTexture>
+														 <HighlightTexture file="DeathKnight_Death_Grip_Icon" alphaMode="ADD">
+														   <TexCoords left="0" right="1" top="0" bottom="1" />
+														 </HighlightTexture>
+																 <ButtonText name="$parentGoH_DEATHKNIGHT_DARK_TRANSFORMATION_ICON">
+																   <FontHeight>
+																	 <AbsValue val="10" />
+																   </FontHeight>
+																 </ButtonText>
+																 <NormalFont style="GameFontNormal" />
+																 <HighlightFont style="GameFontHighlight" />
+																 <DisabledFont style="GameFontDisable" />
+																<Scripts>
+																		<OnEnter>
+																			GameTooltip:SetOwner(self, "ANCHOR_TOP");
+																			GameTooltip:SetText("Dark Transformation", 1.0, 0.8, 0.0, 1 );
+																			GameTooltip:Show(); 
+																		</OnEnter>
+																		<OnLeave>
+																			GameTooltip:Hide();
+																		</OnLeave>
+																		<OnClick>
+																			GoH_Deathknight_MenuButton_Dark_Transformation_OnClick();
+																		</OnClick>
+																</Scripts>
+												  </Button>
+												  <!-- ################################################################## -->
+												  <!-- ################################################################## -->
+												   <!-- RAISE DEAD BUTTON ICON -->
+												   <Button name="GoH_DEATHKNIGHT_RAISE_DEAD_ICON">
+													<Size>
+													  <AbsDimension x="25" y="25" />
+													</Size>
+														 <Anchors>
+																 <Anchor point="TOPLEFT">
+																	 <Offset>
+																			<AbsDimension x="295" y="-360" />
+																	 </Offset>
+																 </Anchor>
+														 </Anchors>
+														 <NormalTexture file="DeathKnight_Death_Grip_Icon">
+														   <TexCoords left="0" right="1" top="0" bottom="1" />
+														 </NormalTexture>
+														 <PushedTexture file="DeathKnight_Death_Grip_Icon">
+														   <TexCoords left="0" right="1" top="0" bottom="1" />
+														 </PushedTexture>
+														 <DisabledTexture file="DeathKnight_Death_Grip_Icon">
+														   <TexCoords left="0" right="1" top="0" bottom="1" />
+														 </DisabledTexture>
+														 <HighlightTexture file="DeathKnight_Death_Grip_Icon" alphaMode="ADD">
+														   <TexCoords left="0" right="1" top="0" bottom="1" />
+														 </HighlightTexture>
+																 <ButtonText name="$parentGoH_DEATHKNIGHT_RAISE_DEAD_ICON">
+																   <FontHeight>
+																	 <AbsValue val="10" />
+																   </FontHeight>
+																 </ButtonText>
+																 <NormalFont style="GameFontNormal" />
+																 <HighlightFont style="GameFontHighlight" />
+																 <DisabledFont style="GameFontDisable" />
+																<Scripts>
+																		<OnEnter>
+																			GameTooltip:SetOwner(self, "ANCHOR_TOP");
+																			GameTooltip:SetText("Raise Dead", 1.0, 0.8, 0.0, 1 );
+																			GameTooltip:Show(); 
+																		</OnEnter>
+																		<OnLeave>
+																			GameTooltip:Hide();
+																		</OnLeave>
+																		<OnClick>
+																			GoH_Deathknight_MenuButton_Raise_Dead_OnClick();
+																		</OnClick>
+																</Scripts>
+												  </Button>
+												  <!-- ################################################################## -->
+												  <!-- ################################################################## -->
+												   <!-- DEATHKNIGHT ARMY OF THE DEAD BUTTON ICON -->
+												   <Button name="GoH_DEATHKNIGHT_ARMY_OF_THE_DEAD_ICON">
+													<Size>
+													  <AbsDimension x="25" y="25" />
+													</Size>
+														 <Anchors>
+																 <Anchor point="TOPLEFT">
+																	 <Offset>
+																			<AbsDimension x="295" y="-390" />
+																	 </Offset>
+																 </Anchor>
+														 </Anchors>
+														 <NormalTexture file="DeathKnight_Death_Grip_Icon">
+														   <TexCoords left="0" right="1" top="0" bottom="1" />
+														 </NormalTexture>
+														 <PushedTexture file="DeathKnight_Death_Grip_Icon">
+														   <TexCoords left="0" right="1" top="0" bottom="1" />
+														 </PushedTexture>
+														 <DisabledTexture file="DeathKnight_Death_Grip_Icon">
+														   <TexCoords left="0" right="1" top="0" bottom="1" />
+														 </DisabledTexture>
+														 <HighlightTexture file="DeathKnight_Death_Grip_Icon" alphaMode="ADD">
+														   <TexCoords left="0" right="1" top="0" bottom="1" />
+														 </HighlightTexture>
+																 <ButtonText name="$parentGoH_DEATHKNIGHT_ARMY_OF_THE_DEAD_ICON">
+																   <FontHeight>
+																	 <AbsValue val="10" />
+																   </FontHeight>
+																 </ButtonText>
+																 <NormalFont style="GameFontNormal" />
+																 <HighlightFont style="GameFontHighlight" />
+																 <DisabledFont style="GameFontDisable" />
+																<Scripts>
+																		<OnEnter>
+																			GameTooltip:SetOwner(self, "ANCHOR_TOP");
+																			GameTooltip:SetText("Army of the Dead", 1.0, 0.8, 0.0, 1 );
+																			GameTooltip:Show(); 
+																		</OnEnter>
+																		<OnLeave>
+																			GameTooltip:Hide();
+																		</OnLeave>
+																		<OnClick>
+																			GoH_Deathknight_MenuButton_Army_of_the_Dead_OnClick();
+																		</OnClick>
+																</Scripts>
+												  </Button>
+												  <!-- ################################################################## -->
+												  <!-- ################################################################## -->
+												   <!-- DEATHKNIGHT SUMMON GARGOYLE BUTTON ICON -->
+												   <Button name="GoH_DEATHKNIGHT_SUMMON_GARGOYLE_ICON">
+													<Size>
+													  <AbsDimension x="25" y="25" />
+													</Size>
+														 <Anchors>
+																 <Anchor point="TOPLEFT">
+																	 <Offset>
+																			<AbsDimension x="295" y="-420" />
+																	 </Offset>
+																 </Anchor>
+														 </Anchors>
+														 <NormalTexture file="DeathKnight_Death_Grip_Icon">
+														   <TexCoords left="0" right="1" top="0" bottom="1" />
+														 </NormalTexture>
+														 <PushedTexture file="DeathKnight_Death_Grip_Icon">
+														   <TexCoords left="0" right="1" top="0" bottom="1" />
+														 </PushedTexture>
+														 <DisabledTexture file="DeathKnight_Death_Grip_Icon">
+														   <TexCoords left="0" right="1" top="0" bottom="1" />
+														 </DisabledTexture>
+														 <HighlightTexture file="DeathKnight_Death_Grip_Icon" alphaMode="ADD">
+														   <TexCoords left="0" right="1" top="0" bottom="1" />
+														 </HighlightTexture>
+																 <ButtonText name="$parentGoH_DEATHKNIGHT_SUMMON_GARGOYLE_ICON">
+																   <FontHeight>
+																	 <AbsValue val="10" />
+																   </FontHeight>
+																 </ButtonText>
+																 <NormalFont style="GameFontNormal" />
+																 <HighlightFont style="GameFontHighlight" />
+																 <DisabledFont style="GameFontDisable" />
+																<Scripts>
+																		<OnEnter>
+																			GameTooltip:SetOwner(self, "ANCHOR_TOP");
+																			GameTooltip:SetText("Summon Gargoyle", 1.0, 0.8, 0.0, 1 );
+																			GameTooltip:Show(); 
+																		</OnEnter>
+																		<OnLeave>
+																			GameTooltip:Hide();
+																		</OnLeave>
+																		<OnClick>
+																			GoH_Deathknight_MenuButton_Summon_Gargoyle_OnClick();
+																		</OnClick>
+																</Scripts>
+												  </Button>
+												  <!-- ################################################################## -->
+												  <!-- ################################################################## -->
+												   <!--  DEFILE BUTTON ICON -->
+												   <Button name="GoH_DEATHKNIGHT_DEFILE_ICON">
+													<Size>
+													  <AbsDimension x="25" y="25" />
+													</Size>
+														 <Anchors>
+																 <Anchor point="TOPLEFT">
+																	 <Offset>
+																			<AbsDimension x="295" y="-240" />
+																	 </Offset>
+																 </Anchor>
+														 </Anchors>
+														 <NormalTexture file="DeathKnight_Death_Grip_Icon">
+														   <TexCoords left="0" right="1" top="0" bottom="1" />
+														 </NormalTexture>
+														 <PushedTexture file="DeathKnight_Death_Grip_Icon">
+														   <TexCoords left="0" right="1" top="0" bottom="1" />
+														 </PushedTexture>
+														 <DisabledTexture file="DeathKnight_Death_Grip_Icon">
+														   <TexCoords left="0" right="1" top="0" bottom="1" />
+														 </DisabledTexture>
+														 <HighlightTexture file="DeathKnight_Death_Grip_Icon" alphaMode="ADD">
+														   <TexCoords left="0" right="1" top="0" bottom="1" />
+														 </HighlightTexture>
+																 <ButtonText name="$parentGoH_DEATHKNIGHT_DEFILE_ICON">
+																   <FontHeight>
+																	 <AbsValue val="10" />
+																   </FontHeight>
+																 </ButtonText>
+																 <NormalFont style="GameFontNormal" />
+																 <HighlightFont style="GameFontHighlight" />
+																 <DisabledFont style="GameFontDisable" />
+																<Scripts>
+																		<OnEnter>
+																			GameTooltip:SetOwner(self, "ANCHOR_TOP");
+																			GameTooltip:SetText("Defile", 1.0, 0.8, 0.0, 1 );
+																			GameTooltip:Show(); 
+																		</OnEnter>
+																		<OnLeave>
+																			GameTooltip:Hide();
+																		</OnLeave>
+																		<OnClick>
+																			GoH_Deathknight_MenuButton_Defile_OnClick();
+																		</OnClick>
+																</Scripts>
+												  </Button>
+												  <!-- ################################################################## -->
+												  <!-- ################################################################## -->
+												   <!--  APOCALYPSE BUTTON ICON -->
+												   <!--  APOCALYPSE BUTTON ICON -->
+												   <Button name="GoH_DEATHKNIGHT_APOCALYPSE_ICON">
+													<Size>
+													  <AbsDimension x="25" y="25" />
+													</Size>
+														 <Anchors>
+																 <Anchor point="TOPLEFT">
+																	 <Offset>
+																			<AbsDimension x="295" y="-210" />
+																	 </Offset>
+																 </Anchor>
+														 </Anchors>
+														 <NormalTexture file="DeathKnight_Death_Grip_Icon">
+														   <TexCoords left="0" right="1" top="0" bottom="1" />
+														 </NormalTexture>
+														 <PushedTexture file="DeathKnight_Death_Grip_Icon">
+														   <TexCoords left="0" right="1" top="0" bottom="1" />
+														 </PushedTexture>
+														 <DisabledTexture file="DeathKnight_Death_Grip_Icon">
+														   <TexCoords left="0" right="1" top="0" bottom="1" />
+														 </DisabledTexture>
+														 <HighlightTexture file="DeathKnight_Death_Grip_Icon" alphaMode="ADD">
+														   <TexCoords left="0" right="1" top="0" bottom="1" />
+														 </HighlightTexture>
+																 <ButtonText name="$parentGoH_DEATHKNIGHT_APOCALYPSE_ICON">
+																   <FontHeight>
+																	 <AbsValue val="10" />
+																   </FontHeight>
+																 </ButtonText>
+																 <NormalFont style="GameFontNormal" />
+																 <HighlightFont style="GameFontHighlight" />
+																 <DisabledFont style="GameFontDisable" />
+																<Scripts>
+																		<OnEnter>
+																			GameTooltip:SetOwner(self, "ANCHOR_TOP");
+																			GameTooltip:SetText("Apocalypse", 1.0, 0.8, 0.0, 1 );
+																			GameTooltip:Show(); 
+																		</OnEnter>
+																		<OnLeave>
+																			GameTooltip:Hide();
+																		</OnLeave>
+																		<OnClick>
+																			GoH_Deathknight_MenuButton_Apocalypse_OnClick();
+																		</OnClick>
+																</Scripts>
+												  </Button>
+												  <!--   CHAINS OF ICE BUTTON ICON -->
+												   <Button name="GoH_DEATHKNIGHT_CHAINS_OF_ICE_ICON">
+													<Size>
+													  <AbsDimension x="25" y="25" />
+													</Size>
+														 <Anchors>
+																 <Anchor point="TOPLEFT">
+																	 <Offset>
+																			<AbsDimension x="95" y="-360" />
+																	 </Offset>
+																 </Anchor>
+														 </Anchors>
+														 <NormalTexture file="DeathKnight_Death_Grip_Icon">
+														   <TexCoords left="0" right="1" top="0" bottom="1" />
+														 </NormalTexture>
+														 <PushedTexture file="DeathKnight_Death_Grip_Icon">
+														   <TexCoords left="0" right="1" top="0" bottom="1" />
+														 </PushedTexture>
+														 <DisabledTexture file="DeathKnight_Death_Grip_Icon">
+														   <TexCoords left="0" right="1" top="0" bottom="1" />
+														 </DisabledTexture>
+														 <HighlightTexture file="DeathKnight_Death_Grip_Icon" alphaMode="ADD">
+														   <TexCoords left="0" right="1" top="0" bottom="1" />
+														 </HighlightTexture>
+																 <ButtonText name="$parentGoH_DEATHKNIGHT_CHAINS_OF_ICE_ICON">
+																   <FontHeight>
+																	 <AbsValue val="10" />
+																   </FontHeight>
+																 </ButtonText>
+																 <NormalFont style="GameFontNormal" />
+																 <HighlightFont style="GameFontHighlight" />
+																 <DisabledFont style="GameFontDisable" />
+																<Scripts>
+																		<OnEnter>
+																			GameTooltip:SetOwner(self, "ANCHOR_TOP");
+																			GameTooltip:SetText("Chains of Ice", 1.0, 0.8, 0.0, 1 );
+																			GameTooltip:Show(); 
+																		</OnEnter>
+																		<OnLeave>
+																			GameTooltip:Hide();
+																		</OnLeave>
+																		<OnClick>
+																			GoH_Deathknight_MenuButton_Chains_of_Ice_OnClick();
+																		</OnClick>
+																</Scripts>
+												  </Button>
+												  <!--   PATH OF FROST BUTTON ICON -->
+												   <Button name="GoH_DEATHKNIGHT_PATH_OF_FROST_ICON">
+													<Size>
+													  <AbsDimension x="25" y="25" />
+													</Size>
+														 <Anchors>
+																 <Anchor point="TOPLEFT">
+																	 <Offset>
+																			<AbsDimension x="495" y="-240" />
+																	 </Offset>
+																 </Anchor>
+														 </Anchors>
+														 <NormalTexture file="DeathKnight_Death_Grip_Icon">
+														   <TexCoords left="0" right="1" top="0" bottom="1" />
+														 </NormalTexture>
+														 <PushedTexture file="DeathKnight_Death_Grip_Icon">
+														   <TexCoords left="0" right="1" top="0" bottom="1" />
+														 </PushedTexture>
+														 <DisabledTexture file="DeathKnight_Death_Grip_Icon">
+														   <TexCoords left="0" right="1" top="0" bottom="1" />
+														 </DisabledTexture>
+														 <HighlightTexture file="DeathKnight_Death_Grip_Icon" alphaMode="ADD">
+														   <TexCoords left="0" right="1" top="0" bottom="1" />
+														 </HighlightTexture>
+																 <ButtonText name="$parentGoH_DEATHKNIGHT_PATH_OF_FROST_ICON">
+																   <FontHeight>
+																	 <AbsValue val="10" />
+																   </FontHeight>
+																 </ButtonText>
+																 <NormalFont style="GameFontNormal" />
+																 <HighlightFont style="GameFontHighlight" />
+																 <DisabledFont style="GameFontDisable" />
+																<Scripts>
+																		<OnEnter>
+																			GameTooltip:SetOwner(self, "ANCHOR_TOP");
+																			GameTooltip:SetText("Path of Frost", 1.0, 0.8, 0.0, 1 );
+																			GameTooltip:Show(); 
+																		</OnEnter>
+																		<OnLeave>
+																			GameTooltip:Hide();
+																		</OnLeave>
+																		<OnClick>
+																			GoH_Deathknight_MenuButton_Path_of_Frost_OnClick();
+																		</OnClick>
+																</Scripts>
+												  </Button>
+												  <!-- DEATHKNIGHT PILLAR OF FROST BUTTON ICON -->
+												   <Button name="GoH_DEATHKNIGHT_PILLAR_OF_FROST_ICON">
+													<Size>
+													  <AbsDimension x="25" y="25" />
+													</Size>
+														 <Anchors>
+																 <Anchor point="TOPLEFT">
+																	 <Offset>
+																			<AbsDimension x="295" y="-450" />
+																	 </Offset>
+																 </Anchor>
+														 </Anchors>
+														 <NormalTexture file="DeathKnight_Death_Grip_Icon">
+														   <TexCoords left="0" right="1" top="0" bottom="1" />
+														 </NormalTexture>
+														 <PushedTexture file="DeathKnight_Death_Grip_Icon">
+														   <TexCoords left="0" right="1" top="0" bottom="1" />
+														 </PushedTexture>
+														 <DisabledTexture file="DeathKnight_Death_Grip_Icon">
+														   <TexCoords left="0" right="1" top="0" bottom="1" />
+														 </DisabledTexture>
+														 <HighlightTexture file="DeathKnight_Death_Grip_Icon" alphaMode="ADD">
+														   <TexCoords left="0" right="1" top="0" bottom="1" />
+														 </HighlightTexture>
+																 <ButtonText name="$parentGoH_DEATHKNIGHT_PILLAR_OF_FROST_ICON">
+																   <FontHeight>
+																	 <AbsValue val="10" />
+																   </FontHeight>
+																 </ButtonText>
+																 <NormalFont style="GameFontNormal" />
+																 <HighlightFont style="GameFontHighlight" />
+																 <DisabledFont style="GameFontDisable" />
+																<Scripts>
+																		<OnEnter>
+																			GameTooltip:SetOwner(self, "ANCHOR_TOP");
+																			GameTooltip:SetText("Pillar of Frost", 1.0, 0.8, 0.0, 1 );
+																			GameTooltip:Show(); 
+																		</OnEnter>
+																		<OnLeave>
+																			GameTooltip:Hide();
+																		</OnLeave>
+																		<OnClick>
+																			GoH_Deathknight_MenuButton_Pillar_of_Frost_OnClick();
+																		</OnClick>
+																</Scripts>
+												  </Button>
+												  <!--  BLOOD BOIL BUTTON ICON -->
+												   <Button name="GoH_DEATHKNIGHT_BLOOD_BOIL_ICON">
+													<Size>
+													  <AbsDimension x="25" y="25" />
+													</Size>
+														 <Anchors>
+																 <Anchor point="TOPLEFT">
+																	 <Offset>
+																			<AbsDimension x="95" y="-300" />
+																	 </Offset>
+																 </Anchor>
+														 </Anchors>
+														 <NormalTexture file="DeathKnight_Death_Grip_Icon">
+														   <TexCoords left="0" right="1" top="0" bottom="1" />
+														 </NormalTexture>
+														 <PushedTexture file="DeathKnight_Death_Grip_Icon">
+														   <TexCoords left="0" right="1" top="0" bottom="1" />
+														 </PushedTexture>
+														 <DisabledTexture file="DeathKnight_Death_Grip_Icon">
+														   <TexCoords left="0" right="1" top="0" bottom="1" />
+														 </DisabledTexture>
+														 <HighlightTexture file="DeathKnight_Death_Grip_Icon" alphaMode="ADD">
+														   <TexCoords left="0" right="1" top="0" bottom="1" />
+														 </HighlightTexture>
+																 <ButtonText name="$parentGoH_DEATHKNIGHT_BLOOD_BOIL_ICON">
+																   <FontHeight>
+																	 <AbsValue val="10" />
+																   </FontHeight>
+																 </ButtonText>
+																 <NormalFont style="GameFontNormal" />
+																 <HighlightFont style="GameFontHighlight" />
+																 <DisabledFont style="GameFontDisable" />
+																<Scripts>
+																		<OnEnter>
+																			GameTooltip:SetOwner(self, "ANCHOR_TOP");
+																			GameTooltip:SetText("Blood Boil", 1.0, 0.8, 0.0, 1 );
+																			GameTooltip:Show(); 
+																		</OnEnter>
+																		<OnLeave>
+																			GameTooltip:Hide();
+																		</OnLeave>
+																		<OnClick>
+																			GoH_Deathknight_MenuButton_Blood_Boil_OnClick();
+																		</OnClick>
+																</Scripts>
+												  </Button>
+												  <!--   HOWLING_BLAST BUTTON ICON -->
+												   <Button name="GoH_DEATHKNIGHT_HOWLING_BLAST_ICON">
+													<Size>
+													  <AbsDimension x="25" y="25" />
+													</Size>
+														 <Anchors>
+																 <Anchor point="TOPLEFT">
+																	 <Offset>
+																			<AbsDimension x="495" y="-270" />
+																	 </Offset>
+																 </Anchor>
+														 </Anchors>
+														 <NormalTexture file="DeathKnight_Death_Grip_Icon">
+														   <TexCoords left="0" right="1" top="0" bottom="1" />
+														 </NormalTexture>
+														 <PushedTexture file="DeathKnight_Death_Grip_Icon">
+														   <TexCoords left="0" right="1" top="0" bottom="1" />
+														 </PushedTexture>
+														 <DisabledTexture file="DeathKnight_Death_Grip_Icon">
+														   <TexCoords left="0" right="1" top="0" bottom="1" />
+														 </DisabledTexture>
+														 <HighlightTexture file="DeathKnight_Death_Grip_Icon" alphaMode="ADD">
+														   <TexCoords left="0" right="1" top="0" bottom="1" />
+														 </HighlightTexture>
+																 <ButtonText name="$parentGoH_DEATHKNIGHT_HOWLING_BLAST_ICON">
+																   <FontHeight>
+																	 <AbsValue val="10" />
+																   </FontHeight>
+																 </ButtonText>
+																 <NormalFont style="GameFontNormal" />
+																 <HighlightFont style="GameFontHighlight" />
+																 <DisabledFont style="GameFontDisable" />
+																<Scripts>
+																		<OnEnter>
+																			GameTooltip:SetOwner(self, "ANCHOR_TOP");
+																			GameTooltip:SetText("Howling Blast", 1.0, 0.8, 0.0, 1 );
+																			GameTooltip:Show(); 
+																		</OnEnter>
+																		<OnLeave>
+																			GameTooltip:Hide();
+																		</OnLeave>
+																		<OnClick>
+																			GoH_Deathknight_MenuButton_Howling_Blast_OnClick();
+																		</OnClick>
+																</Scripts>
+												  </Button>
+												  <!--  TANK DANCING RUNE WEAPON BUTTON ICON -->
+												   <Button name="GoH_DEATHKNIGHT_DANCING_RUNE_WEAPON_ICON">
+													<Size>
+													  <AbsDimension x="25" y="25" />
+													</Size>
+														 <Anchors>
+																 <Anchor point="TOPLEFT">
+																	 <Offset>
+																			<AbsDimension x="95" y="-330" />
+																	 </Offset>
+																 </Anchor>
+														 </Anchors>
+														 <NormalTexture file="DeathKnight_Death_Grip_Icon">
+														   <TexCoords left="0" right="1" top="0" bottom="1" />
+														 </NormalTexture>
+														 <PushedTexture file="DeathKnight_Death_Grip_Icon">
+														   <TexCoords left="0" right="1" top="0" bottom="1" />
+														 </PushedTexture>
+														 <DisabledTexture file="DeathKnight_Death_Grip_Icon">
+														   <TexCoords left="0" right="1" top="0" bottom="1" />
+														 </DisabledTexture>
+														 <HighlightTexture file="DeathKnight_Death_Grip_Icon" alphaMode="ADD">
+														   <TexCoords left="0" right="1" top="0" bottom="1" />
+														 </HighlightTexture>
+																 <ButtonText name="$parentGoH_DEATHKNIGHT_DANCING_RUNE_WEAPON_ICON">
+																   <FontHeight>
+																	 <AbsValue val="10" />
+																   </FontHeight>
+																 </ButtonText>
+																 <NormalFont style="GameFontNormal" />
+																 <HighlightFont style="GameFontHighlight" />
+																 <DisabledFont style="GameFontDisable" />
+																<Scripts>
+																		<OnEnter>
+																			GameTooltip:SetOwner(self, "ANCHOR_TOP");
+																			GameTooltip:SetText("Dancing Rune Weapon", 1.0, 0.8, 0.0, 1 );
+																			GameTooltip:Show(); 
+																		</OnEnter>
+																		<OnLeave>
+																			GameTooltip:Hide();
+																		</OnLeave>
+																		<OnClick>
+																			GoH_Deathknight_MenuButton_Dancing_Rune_Weapon_OnClick();
+																		</OnClick>
+																</Scripts>
+												  </Button>
+												  
+												  <!--   REMORSELESS WINTER BUTTON ICON -->
+												   <Button name="GoH_DEATHKNIGHT_REMORSELESS_WINTER_ICON">
+													<Size>
+													  <AbsDimension x="25" y="25" />
+													</Size>
+														 <Anchors>
+																 <Anchor point="TOPLEFT">
+																	 <Offset>
+																			<AbsDimension x="495" y="-300" />
+																	 </Offset>
+																 </Anchor>
+														 </Anchors>
+														 <NormalTexture file="DeathKnight_Death_Grip_Icon">
+														   <TexCoords left="0" right="1" top="0" bottom="1" />
+														 </NormalTexture>
+														 <PushedTexture file="DeathKnight_Death_Grip_Icon">
+														   <TexCoords left="0" right="1" top="0" bottom="1" />
+														 </PushedTexture>
+														 <DisabledTexture file="DeathKnight_Death_Grip_Icon">
+														   <TexCoords left="0" right="1" top="0" bottom="1" />
+														 </DisabledTexture>
+														 <HighlightTexture file="DeathKnight_Death_Grip_Icon" alphaMode="ADD">
+														   <TexCoords left="0" right="1" top="0" bottom="1" />
+														 </HighlightTexture>
+																 <ButtonText name="$parentGoH_DEATHKNIGHT_REMORSELESS_WINTER_ICON">
+																   <FontHeight>
+																	 <AbsValue val="10" />
+																   </FontHeight>
+																 </ButtonText>
+																 <NormalFont style="GameFontNormal" />
+																 <HighlightFont style="GameFontHighlight" />
+																 <DisabledFont style="GameFontDisable" />
+																<Scripts>
+																		<OnEnter>
+																			GameTooltip:SetOwner(self, "ANCHOR_TOP");
+																			GameTooltip:SetText("Remorseless Winter", 1.0, 0.8, 0.0, 1 );
+																			GameTooltip:Show(); 
+																		</OnEnter>
+																		<OnLeave>
+																			GameTooltip:Hide();
+																		</OnLeave>
+																		<OnClick>
+																			GoH_Deathknight_MenuButton_Remorseless_Winter_OnClick();
+																		</OnClick>
+																</Scripts>
+												  </Button>
+												  <!--   Death Pact BUTTON ICON -->
+												   <Button name="GoH_DEATHKNIGHT_DEATH_PACT_ICON">
+													<Size>
+													  <AbsDimension x="25" y="25" />
+													</Size>
+														 <Anchors>
+																 <Anchor point="TOPLEFT">
+																	 <Offset>
+																		<AbsDimension x="495" y="-330" />
+																	 </Offset>
+																 </Anchor>
+														 </Anchors>
+														 <NormalTexture file="DeathKnight_Death_Grip_Icon">
+														   <TexCoords left="0" right="1" top="0" bottom="1" />
+														 </NormalTexture>
+														 <PushedTexture file="DeathKnight_Death_Grip_Icon">
+														   <TexCoords left="0" right="1" top="0" bottom="1" />
+														 </PushedTexture>
+														 <DisabledTexture file="DeathKnight_Death_Grip_Icon">
+														   <TexCoords left="0" right="1" top="0" bottom="1" />
+														 </DisabledTexture>
+														 <HighlightTexture file="DeathKnight_Death_Grip_Icon" alphaMode="ADD">
+														   <TexCoords left="0" right="1" top="0" bottom="1" />
+														 </HighlightTexture>
+																 <ButtonText name="$parentGoH_DEATHKNIGHT_DEATH_PACT_ICON">
+																   <FontHeight>
+																	 <AbsValue val="10" />
+																   </FontHeight>
+																 </ButtonText>
+																 <NormalFont style="GameFontNormal" />
+																 <HighlightFont style="GameFontHighlight" />
+																 <DisabledFont style="GameFontDisable" />
+																<Scripts>
+																		<OnEnter>
+																			GameTooltip:SetOwner(self, "ANCHOR_TOP");
+																			GameTooltip:SetText("Death Pact", 1.0, 0.8, 0.0, 1 );
+																			GameTooltip:Show(); 
+																		</OnEnter>
+																		<OnLeave>
+																			GameTooltip:Hide();
+																		</OnLeave>
+																		<OnClick>
+																			GoH_Deathknight_MenuButton_Death_Pact_OnClick();
+																		</OnClick>
+																</Scripts>
+												  </Button>
+												  <!--   MARROWREND BUTTON ICON -->
+												   <Button name="GoH_DEATHKNIGHT_MARROWREND_ICON">
+													<Size>
+													  <AbsDimension x="25" y="25" />
+													</Size>
+														 <Anchors>
+																 <Anchor point="TOPLEFT">
+																	 <Offset>
+																			<AbsDimension x="495" y="-360" />
+																	 </Offset>
+																 </Anchor>
+														 </Anchors>
+														 <NormalTexture file="DeathKnight_Death_Grip_Icon">
+														   <TexCoords left="0" right="1" top="0" bottom="1" />
+														 </NormalTexture>
+														 <PushedTexture file="DeathKnight_Death_Grip_Icon">
+														   <TexCoords left="0" right="1" top="0" bottom="1" />
+														 </PushedTexture>
+														 <DisabledTexture file="DeathKnight_Death_Grip_Icon">
+														   <TexCoords left="0" right="1" top="0" bottom="1" />
+														 </DisabledTexture>
+														 <HighlightTexture file="DeathKnight_Death_Grip_Icon" alphaMode="ADD">
+														   <TexCoords left="0" right="1" top="0" bottom="1" />
+														 </HighlightTexture>
+																 <ButtonText name="$parentGoH_DEATHKNIGHT_MARROWREND_ICON">
+																   <FontHeight>
+																	 <AbsValue val="10" />
+																   </FontHeight>
+																 </ButtonText>
+																 <NormalFont style="GameFontNormal" />
+																 <HighlightFont style="GameFontHighlight" />
+																 <DisabledFont style="GameFontDisable" />
+																<Scripts>
+																		<OnEnter>
+																			GameTooltip:SetOwner(self, "ANCHOR_TOP");
+																			GameTooltip:SetText("Marrowrend", 1.0, 0.8, 0.0, 1 );
+																			GameTooltip:Show(); 
+																		</OnEnter>
+																		<OnLeave>
+																			GameTooltip:Hide();
+																		</OnLeave>
+																		<OnClick>
+																			GoH_Deathknight_MenuButton_Marrowrend_OnClick();
+																		</OnClick>
+																</Scripts>
+												  </Button>
+												  
+												  <!--   CORPSE_EXPLODER BUTTON ICON -->
+												   <Button name="GoH_DEATHKNIGHT_CORPSE_EXPLODER_ICON">
+													<Size>
+													  <AbsDimension x="25" y="25" />
+													</Size>
+														 <Anchors>
+																 <Anchor point="TOPLEFT">
+																	 <Offset>
+																			<AbsDimension x="495" y="-390" />
+																	 </Offset>
+																 </Anchor>
+														 </Anchors>
+														 <NormalTexture file="DeathKnight_Death_Grip_Icon">
+														   <TexCoords left="0" right="1" top="0" bottom="1" />
+														 </NormalTexture>
+														 <PushedTexture file="DeathKnight_Death_Grip_Icon">
+														   <TexCoords left="0" right="1" top="0" bottom="1" />
+														 </PushedTexture>
+														 <DisabledTexture file="DeathKnight_Death_Grip_Icon">
+														   <TexCoords left="0" right="1" top="0" bottom="1" />
+														 </DisabledTexture>
+														 <HighlightTexture file="DeathKnight_Death_Grip_Icon" alphaMode="ADD">
+														   <TexCoords left="0" right="1" top="0" bottom="1" />
+														 </HighlightTexture>
+																 <ButtonText name="$parentGoH_DEATHKNIGHT_CORPSE_EXPLODER_ICON">
+																   <FontHeight>
+																	 <AbsValue val="10" />
+																   </FontHeight>
+																 </ButtonText>
+																 <NormalFont style="GameFontNormal" />
+																 <HighlightFont style="GameFontHighlight" />
+																 <DisabledFont style="GameFontDisable" />
+																<Scripts>
+																		<OnEnter>
+																			GameTooltip:SetOwner(self, "ANCHOR_TOP");
+																			GameTooltip:SetText("Corpse Exploder", 1.0, 0.8, 0.0, 1 );
+																			GameTooltip:Show(); 
+																		</OnEnter>
+																		<OnLeave>
+																			GameTooltip:Hide();
+																		</OnLeave>
+																		<OnClick>
+																			GoH_Deathknight_MenuButton_Corpse_Exploder_OnClick();
+																		</OnClick>
+																</Scripts>
+												  </Button>
+												  
+												  <!--   DEATHS_ADVANCE BUTTON ICON -->
+												   <Button name="GoH_DEATHKNIGHT_DEATHS_ADVANCE_ICON">
+													<Size>
+													  <AbsDimension x="25" y="25" />
+													</Size>
+														 <Anchors>
+																 <Anchor point="TOPLEFT">
+																	 <Offset>
+																			<AbsDimension x="495" y="-420" />
+																	 </Offset>
+																 </Anchor>
+														 </Anchors>
+														 <NormalTexture file="DeathKnight_Death_Grip_Icon">
+														   <TexCoords left="0" right="1" top="0" bottom="1" />
+														 </NormalTexture>
+														 <PushedTexture file="DeathKnight_Death_Grip_Icon">
+														   <TexCoords left="0" right="1" top="0" bottom="1" />
+														 </PushedTexture>
+														 <DisabledTexture file="DeathKnight_Death_Grip_Icon">
+														   <TexCoords left="0" right="1" top="0" bottom="1" />
+														 </DisabledTexture>
+														 <HighlightTexture file="DeathKnight_Death_Grip_Icon" alphaMode="ADD">
+														   <TexCoords left="0" right="1" top="0" bottom="1" />
+														 </HighlightTexture>
+																 <ButtonText name="$parentGoH_DEATHKNIGHT_DEATHS_ADVANCE_ICON">
+																   <FontHeight>
+																	 <AbsValue val="10" />
+																   </FontHeight>
+																 </ButtonText>
+																 <NormalFont style="GameFontNormal" />
+																 <HighlightFont style="GameFontHighlight" />
+																 <DisabledFont style="GameFontDisable" />
+																<Scripts>
+																		<OnEnter>
+																			GameTooltip:SetOwner(self, "ANCHOR_TOP");
+																			GameTooltip:SetText("Deaths Advance", 1.0, 0.8, 0.0, 1 );
+																			GameTooltip:Show(); 
+																		</OnEnter>
+																		<OnLeave>
+																			GameTooltip:Hide();
+																		</OnLeave>
+																		<OnClick>
+																			GoH_Deathknight_MenuButton_Deaths_Advance_OnClick();
+																		</OnClick>
+																</Scripts>
+												  </Button>
+												  
+												  <!--   SACRIFICIAL_PACT BUTTON ICON -->
+												   <Button name="GoH_DEATHKNIGHT_SACRIFICIAL_PACT_ICON">
+													<Size>
+													  <AbsDimension x="25" y="25" />
+													</Size>
+														 <Anchors>
+																 <Anchor point="TOPLEFT">
+																	 <Offset>
+																			<AbsDimension x="495" y="-450" />
+																	 </Offset>
+																 </Anchor>
+														 </Anchors>
+														 <NormalTexture file="DeathKnight_Death_Grip_Icon">
+														   <TexCoords left="0" right="1" top="0" bottom="1" />
+														 </NormalTexture>
+														 <PushedTexture file="DeathKnight_Death_Grip_Icon">
+														   <TexCoords left="0" right="1" top="0" bottom="1" />
+														 </PushedTexture>
+														 <DisabledTexture file="DeathKnight_Death_Grip_Icon">
+														   <TexCoords left="0" right="1" top="0" bottom="1" />
+														 </DisabledTexture>
+														 <HighlightTexture file="DeathKnight_Death_Grip_Icon" alphaMode="ADD">
+														   <TexCoords left="0" right="1" top="0" bottom="1" />
+														 </HighlightTexture>
+																 <ButtonText name="$parentGoH_DEATHKNIGHT_SACRIFICIAL_PACT_ICON">
+																   <FontHeight>
+																	 <AbsValue val="10" />
+																   </FontHeight>
+																 </ButtonText>
+																 <NormalFont style="GameFontNormal" />
+																 <HighlightFont style="GameFontHighlight" />
+																 <DisabledFont style="GameFontDisable" />
+																<Scripts>
+																		<OnEnter>
+																			GameTooltip:SetOwner(self, "ANCHOR_TOP");
+																			GameTooltip:SetText("Sacrificial Pact", 1.0, 0.8, 0.0, 1 );
+																			GameTooltip:Show(); 
+																		</OnEnter>
+																		<OnLeave>
+																			GameTooltip:Hide();
+																		</OnLeave>
+																		<OnClick>
+																			GoH_Deathknight_MenuButton_Sacrificial_Pact_OnClick();
+																		</OnClick>
+																</Scripts>
+												  </Button>
+												   <!--   LICHBORNE BUTTON ICON -->
+												   <Button name="GoH_DEATHKNIGHT_LICHBORNE_ICON">
+													<Size>
+													  <AbsDimension x="25" y="25" />
+													</Size>
+														 <Anchors>
+																 <Anchor point="TOPLEFT">
+																	 <Offset>
+																			<AbsDimension x="665" y="-180" />
+																	 </Offset>
+																 </Anchor>
+														 </Anchors>
+														 <NormalTexture file="DeathKnight_Death_Grip_Icon">
+														   <TexCoords left="0" right="1" top="0" bottom="1" />
+														 </NormalTexture>
+														 <PushedTexture file="DeathKnight_Death_Grip_Icon">
+														   <TexCoords left="0" right="1" top="0" bottom="1" />
+														 </PushedTexture>
+														 <DisabledTexture file="DeathKnight_Death_Grip_Icon">
+														   <TexCoords left="0" right="1" top="0" bottom="1" />
+														 </DisabledTexture>
+														 <HighlightTexture file="DeathKnight_Death_Grip_Icon" alphaMode="ADD">
+														   <TexCoords left="0" right="1" top="0" bottom="1" />
+														 </HighlightTexture>
+																 <ButtonText name="$parentGoH_DEATHKNIGHT_LICHBORNE_ICON">
+																   <FontHeight>
+																	 <AbsValue val="10" />
+																   </FontHeight>
+																 </ButtonText>
+																 <NormalFont style="GameFontNormal" />
+																 <HighlightFont style="GameFontHighlight" />
+																 <DisabledFont style="GameFontDisable" />
+																<Scripts>
+																		<OnEnter>
+																			GameTooltip:SetOwner(self, "ANCHOR_TOP");
+																			GameTooltip:SetText("Lichborne", 1.0, 0.8, 0.0, 1 );
+																			GameTooltip:Show(); 
+																		</OnEnter>
+																		<OnLeave>
+																			GameTooltip:Hide();
+																		</OnLeave>
+																		<OnClick>
+																			GoH_Deathknight_MenuButton_Lichborne_OnClick();
+																		</OnClick>
+																</Scripts>
+												  </Button>
+												  
+												   <!--  ACHERUS_DEATHCHARGER BUTTON ICON -->
+												   <Button name="GoH_DEATHKNIGHT_ACHERUS_DEATHCHARGER_ICON">
+													<Size>
+													  <AbsDimension x="25" y="25" />
+													</Size>
+														 <Anchors>
+																 <Anchor point="TOPLEFT">
+																	 <Offset>
+																			<AbsDimension x="665" y="-210" />
+																	 </Offset>
+																 </Anchor>
+														 </Anchors>
+														 <NormalTexture file="DeathKnight_Death_Grip_Icon">
+														   <TexCoords left="0" right="1" top="0" bottom="1" />
+														 </NormalTexture>
+														 <PushedTexture file="DeathKnight_Death_Grip_Icon">
+														   <TexCoords left="0" right="1" top="0" bottom="1" />
+														 </PushedTexture>
+														 <DisabledTexture file="DeathKnight_Death_Grip_Icon">
+														   <TexCoords left="0" right="1" top="0" bottom="1" />
+														 </DisabledTexture>
+														 <HighlightTexture file="DeathKnight_Death_Grip_Icon" alphaMode="ADD">
+														   <TexCoords left="0" right="1" top="0" bottom="1" />
+														 </HighlightTexture>
+																 <ButtonText name="$parentGoH_DEATHKNIGHT_ACHERUS_DEATHCHARGER_ICON">
+																   <FontHeight>
+																	 <AbsValue val="10" />
+																   </FontHeight>
+																 </ButtonText>
+																 <NormalFont style="GameFontNormal" />
+																 <HighlightFont style="GameFontHighlight" />
+																 <DisabledFont style="GameFontDisable" />
+																<Scripts>
+																		<OnEnter>
+																			GameTooltip:SetOwner(self, "ANCHOR_TOP");
+																			GameTooltip:SetText("Acherus Deathcharger", 1.0, 0.8, 0.0, 1 );
+																			GameTooltip:Show(); 
+																		</OnEnter>
+																		<OnLeave>
+																			GameTooltip:Hide();
+																		</OnLeave>
+																		<OnClick>
+																			GoH_Deathknight_MenuButton_Acherus_Deathcharger_OnClick();
+																		</OnClick>
+																</Scripts>
+												  </Button>
+												  
+												  <!--  UNHOLY_BLIGHT BUTTON ICON -->
+												   <Button name="GoH_DEATHKNIGHT_UNHOLY_BLIGHT_ICON">
+													<Size>
+													  <AbsDimension x="25" y="25" />
+													</Size>
+														 <Anchors>
+																 <Anchor point="TOPLEFT">
+																	 <Offset>
+																			<AbsDimension x="665" y="-240" />
+																	 </Offset>
+																 </Anchor>
+														 </Anchors>
+														 <NormalTexture file="DeathKnight_Death_Grip_Icon">
+														   <TexCoords left="0" right="1" top="0" bottom="1" />
+														 </NormalTexture>
+														 <PushedTexture file="DeathKnight_Death_Grip_Icon">
+														   <TexCoords left="0" right="1" top="0" bottom="1" />
+														 </PushedTexture>
+														 <DisabledTexture file="DeathKnight_Death_Grip_Icon">
+														   <TexCoords left="0" right="1" top="0" bottom="1" />
+														 </DisabledTexture>
+														 <HighlightTexture file="DeathKnight_Death_Grip_Icon" alphaMode="ADD">
+														   <TexCoords left="0" right="1" top="0" bottom="1" />
+														 </HighlightTexture>
+																 <ButtonText name="$parentGoH_DEATHKNIGHT_UNHOLY_BLIGHT_ICON">
+																   <FontHeight>
+																	 <AbsValue val="10" />
+																   </FontHeight>
+																 </ButtonText>
+																 <NormalFont style="GameFontNormal" />
+																 <HighlightFont style="GameFontHighlight" />
+																 <DisabledFont style="GameFontDisable" />
+																<Scripts>
+																		<OnEnter>
+																			GameTooltip:SetOwner(self, "ANCHOR_TOP");
+																			GameTooltip:SetText("Unholy Blight", 1.0, 0.8, 0.0, 1 );
+																			GameTooltip:Show(); 
+																		</OnEnter>
+																		<OnLeave>
+																			GameTooltip:Hide();
+																		</OnLeave>
+																		<OnClick>
+																			GoH_Deathknight_MenuButton_Unholy_Blight_OnClick();
+																		</OnClick>
+																</Scripts>
+												  </Button>
+												  <!-- DEATH GATE BUTTON ICON -->
+												   <Button name="GoH_DEATHKNIGHT_DEATH_GATE_ICON">
+													<Size>
+													  <AbsDimension x="25" y="25" />
+													</Size>
+														 <Anchors>
+																 <Anchor point="TOPLEFT">
+																	 <Offset>
+																			<AbsDimension x="495" y="-180" />
+																	 </Offset>
+																 </Anchor>
+														 </Anchors>
+														 <NormalTexture file="DeathKnight_Death_Grip_Icon">
+														   <TexCoords left="0" right="1" top="0" bottom="1" />
+														 </NormalTexture>
+														 <PushedTexture file="DeathKnight_Death_Grip_Icon">
+														   <TexCoords left="0" right="1" top="0" bottom="1" />
+														 </PushedTexture>
+														 <DisabledTexture file="DeathKnight_Death_Grip_Icon">
+														   <TexCoords left="0" right="1" top="0" bottom="1" />
+														 </DisabledTexture>
+														 <HighlightTexture file="DeathKnight_Death_Grip_Icon" alphaMode="ADD">
+														   <TexCoords left="0" right="1" top="0" bottom="1" />
+														 </HighlightTexture>
+																 <ButtonText name="$parentGoH_DEATHKNIGHT_DEATH_GATE_ICON">
+																   <FontHeight>
+																	 <AbsValue val="10" />
+																   </FontHeight>
+																 </ButtonText>
+																 <NormalFont style="GameFontNormal" />
+																 <HighlightFont style="GameFontHighlight" />
+																 <DisabledFont style="GameFontDisable" />
+																<Scripts>
+																		<OnEnter>
+																			GameTooltip:SetOwner(self, "ANCHOR_TOP");
+																			GameTooltip:SetText("Death Gate", 1.0, 0.8, 0.0, 1 );
+																			
+																			GameTooltip:Show(); 
+																		</OnEnter>
+																		<OnLeave>
+																			GameTooltip:Hide();
+																		</OnLeave>
+																		<OnClick>
+																			GoH_Deathknight_MenuButton_Death_Gate_OnClick();
+																		</OnClick>
+																</Scripts>
+												  </Button>
+												  
+												  <!-- DEATH STRIKE BUTTON ICON -->
+												   <Button name="GoH_DEATHKNIGHT_DEATH_STRIKE_ICON">
+													<Size>
+													  <AbsDimension x="25" y="25" />
+													</Size>
+														 <Anchors>
+																 <Anchor point="TOPLEFT">
+																	 <Offset>
+																			<AbsDimension x="495" y="-210" />
+																	 </Offset>
+																 </Anchor>
+														 </Anchors>
+														 <NormalTexture file="DeathKnight_Death_Grip_Icon">
+														   <TexCoords left="0" right="1" top="0" bottom="1" />
+														 </NormalTexture>
+														 <PushedTexture file="DeathKnight_Death_Grip_Icon">
+														   <TexCoords left="0" right="1" top="0" bottom="1" />
+														 </PushedTexture>
+														 <DisabledTexture file="DeathKnight_Death_Grip_Icon">
+														   <TexCoords left="0" right="1" top="0" bottom="1" />
+														 </DisabledTexture>
+														 <HighlightTexture file="DeathKnight_Death_Grip_Icon" alphaMode="ADD">
+														   <TexCoords left="0" right="1" top="0" bottom="1" />
+														 </HighlightTexture>
+																 <ButtonText name="$parentGoH_DEATHKNIGHT_DEATH_STRIKE_ICON">
+																   <FontHeight>
+																	 <AbsValue val="10" />
+																   </FontHeight>
+																 </ButtonText>
+																 <NormalFont style="GameFontNormal" />
+																 <HighlightFont style="GameFontHighlight" />
+																 <DisabledFont style="GameFontDisable" />
+																<Scripts>
+																		<OnEnter>
+																			GameTooltip:SetOwner(self, "ANCHOR_TOP");
+																			GameTooltip:SetText("Death Strike", 1.0, 0.8, 0.0, 1 );
+																			GameTooltip:Show(); 
+																		</OnEnter>
+																		<OnLeave>
+																			GameTooltip:Hide();
+																		</OnLeave>
+																		<OnClick>
+																			GoH_Deathknight_MenuButton_Death_Strike_OnClick();
+																		</OnClick>
+																</Scripts>
+												  </Button>
+												  
+												  
+												  <!-- ################################################################## -->
+												  <!-- ################################################################## -->
+										</Frames>
+										<Layers>
+										  <Layer level="BACKGROUND">
+											<Texture name="$parentTexture" setAllPoints="true" file="interface\AddOns\GoH\Images\GoH_v5_BackGround_DeathKnight_Page2">
+											  <TexCoords left="0" right="1" top="0" bottom="1" />
+											</Texture>
+										  </Layer>
+				                                
+										  		<!-- ################################################################## -->
+										  		
+										  		<!-- ################################################################## -->
+										  		<!-- ################################################################## -->
+										        <!-- PLAY LOGIN SOUND TEXT -->
+										  		<Layer level="OVERLAY">
+										  			<FontString name="DeathKnight_Play_Login_Sound_Text" inherits="GameFontNormal" text="Play Login Sound" justifyV="TOP" justifyH="LEFT">
+										  				<Size>
+										  					<AbsDimension x="160" y="20" />
+										  				</Size>
+										  				<Anchors>
+										  					<Anchor point="TOPLEFT">
+										  						<Offset x="125" y="-187" />
+										  					</Anchor>
+										  				</Anchors>
+										  					<Color r="1" g="1" b="1" />
+										  			</FontString>
+										  		</Layer>
+												<!-- Wraith_Walk TEXT -->
+										  		<Layer level="OVERLAY">
+										  			<FontString name="DeathKnight_Wraith_Walk_Text" inherits="GameFontNormal" text="DeathKnight_Wraith_Walk_Name" justifyV="TOP" justifyH="LEFT">
+										  				<Size>
+										  					<AbsDimension x="160" y="20" />
+										  				</Size>
+										  				<Anchors>
+										  					<Anchor point="TOPLEFT">
+										  						<Offset x="125" y="-217" />
+										  					</Anchor>
+										  				</Anchors>
+										  					<Color r="1" g="1" b="1" />
+										  			</FontString>
+										  		</Layer>
+												
+												<!-- Asphyxiate TEXT -->
+										  		<Layer level="OVERLAY">
+										  			<FontString name="DeathKnight_Asphyxiate_Text" inherits="GameFontNormal" text="DeathKnight_Asphyxiate_Name" justifyV="TOP" justifyH="LEFT">
+										  				<Size>
+										  					<AbsDimension x="160" y="20" />
+										  				</Size>
+										  				<Anchors>
+										  					<Anchor point="TOPLEFT">
+										  						<Offset x="125" y="-247" />
+										  					</Anchor>
+										  				</Anchors>
+										  					<Color r="1" g="1" b="1" />
+										  			</FontString>
+										  		</Layer>
+												
+												<!-- ################################################################## -->
+										  		<!-- ################################################################## -->
+										        <!-- DEATH AND DECAY TEXT -->
+										  		<Layer level="OVERLAY">
+										  			<FontString name="DeathKnight_Death_and_Decay_Text" inherits="GameFontNormal" text="DeathKnight_Death_and_Decay_Name" justifyV="TOP" justifyH="LEFT">
+										  				<Size>
+										  					<AbsDimension x="160" y="20" />
+										  				</Size>
+										  				<Anchors>
+										  					<Anchor point="TOPLEFT">
+										  						<Offset x="125" y="-277" />
+										  					</Anchor>
+										  				</Anchors>
+										  					<Color r="1" g="1" b="1" />
+										  			</FontString>
+										  		</Layer>
+												<!-- DEATH COIL TEXT -->
+										  		<Layer level="OVERLAY">
+										  			<FontString name="DeathKnight_Death_Coil_Text" inherits="GameFontNormal" text="DeathKnight_Death_Coil_Name" justifyV="TOP" justifyH="LEFT">
+										  				<Size>
+										  					<AbsDimension x="160" y="20" />
+										  				</Size>
+										  				<Anchors>
+										  					<Anchor point="TOPLEFT">
+										  						<Offset x="125" y="-397" />
+										  					</Anchor>
+										  				</Anchors>
+										  					<Color r="1" g="1" b="1" />
+										  			</FontString>
+										  		</Layer>
+												<!-- EMPOWER RUNE WEAPON TEXT -->
+										  		<Layer level="OVERLAY">
+										  			<FontString name="DeathKnight_Empower_Rune_Weapon_Text" inherits="GameFontNormal" text="DeathKnight_Empower_Rune_Weapon_Name" justifyV="TOP" justifyH="LEFT">
+										  				<Size>
+										  					<AbsDimension x="160" y="20" />
+										  				</Size>
+										  				<Anchors>
+										  					<Anchor point="TOPLEFT">
+										  						<Offset x="125" y="-427" />
+										  					</Anchor>
+										  				</Anchors>
+										  					<Color r="1" g="1" b="1" />
+										  			</FontString>
+										  		</Layer>
+												 <!-- ICEBOUND FORTITUDE TEXT -->
+										  		<Layer level="OVERLAY">
+										  			<FontString name="DeathKnight_Icebound_Fortitude_Text" inherits="GameFontNormal" text="DeathKnight_Icebound_Fortitude_Name" justifyV="TOP" justifyH="LEFT">
+										  				<Size>
+										  					<AbsDimension x="160" y="20" />
+										  				</Size>
+										  				<Anchors>
+										  					<Anchor point="TOPLEFT">
+										  						<Offset x="125" y="-457" />
+										  					</Anchor>
+										  				</Anchors>
+										  					<Color r="1" g="1" b="1" />
+										  			</FontString>
+										  		</Layer>
+												<!-- ################################################################## -->
+										  		<!-- ################################################################## -->
+										        	<!-- ANTI-MAGIC SHELL TEXT -->
+										  		<Layer level="OVERLAY">
+										  			<FontString name="DeathKnight_AntiMagic_Shell_Text" inherits="GameFontNormal" text="DeathKnight_AntiMagic_Shell_Name" justifyV="TOP" justifyH="LEFT">
+										  				<Size>
+										  					<AbsDimension x="160" y="20" />
+										  				</Size>
+										  				<Anchors>
+										  					<Anchor point="TOPLEFT">
+										  						<Offset x="325" y="-277" />
+										  					</Anchor>
+										  				</Anchors>
+										  					<Color r="1" g="1" b="1" />
+										  			</FontString>
+										  		</Layer>
+												<!-- ANTI-MAGIC ZONE TEXT -->
+										  		<Layer level="OVERLAY">
+										  			<FontString name="DeathKnight_AntiMagic_Zone_Text" inherits="GameFontNormal" text="DeathKnight_AntiMagic_Zone_Name" justifyV="TOP" justifyH="LEFT">
+										  				<Size>
+										  					<AbsDimension x="160" y="20" />
+										  				</Size>
+										  				<Anchors>
+										  					<Anchor point="TOPLEFT">
+										  						<Offset x="345" y="-307" />
+										  					</Anchor>
+										  				</Anchors>
+										  					<Color r="1" g="1" b="1" />
+										  			</FontString>
+										  		</Layer>
+												<!-- RAISE ALLY TEXT -->
+										  		<Layer level="OVERLAY">
+										  			<FontString name="DeathKnight_Raise_Ally_Text" inherits="GameFontNormal" text="DeathKnight_Raise_Ally_Name" justifyV="TOP" justifyH="LEFT">
+										  				<Size>
+										  					<AbsDimension x="160" y="20" />
+										  				</Size>
+										  				<Anchors>
+										  					<Anchor point="TOPLEFT">
+										  						<Offset x="325" y="-337" />
+										  					</Anchor>
+										  				</Anchors>
+										  					<Color r="1" g="1" b="1" />
+										  			</FontString>
+										  		</Layer>
+												<!-- ################################################################## -->
+										  		<!-- ################################################################## -->
+										        	<!-- ARMY OF THE DEAD TEXT -->
+										  		<Layer level="OVERLAY">
+										  			<FontString name="DeathKnight_Army_of_the_Dead_Text" inherits="GameFontNormal" text="DeathKnight_Army_of_the_Dead_Name" justifyV="TOP" justifyH="LEFT">
+										  				<Size>
+										  					<AbsDimension x="160" y="20" />
+										  				</Size>
+										  				<Anchors>
+										  					<Anchor point="TOPLEFT">
+										  						<Offset x="325" y="-397" />
+										  					</Anchor>
+										  				</Anchors>
+										  					<Color r="1" g="1" b="1" />
+										  			</FontString>
+										  		</Layer>
+										  		<!-- ################################################################## -->
+										  		<!-- ################################################################## -->
+										        	<!-- RAISE DEAD TEXT -->
+										  		<Layer level="OVERLAY">
+										  			<FontString name="DeathKnight_Raise_Dead_Text" inherits="GameFontNormal" text="DeathKnight_Raise_Dead_Name" justifyV="TOP" justifyH="LEFT">
+										  				<Size>
+										  					<AbsDimension x="160" y="20" />
+										  				</Size>
+										  				<Anchors>
+										  					<Anchor point="TOPLEFT">
+										  						<Offset x="325" y="-367" />
+										  					</Anchor>
+										  				</Anchors>
+										  					<Color r="1" g="1" b="1" />
+										  			</FontString>
+										  		</Layer>
+												<!-- ################################################################## -->
+										  		<!-- ################################################################## -->
+										        	<!-- DARK TRANSFORMATION TEXT -->
+										  		<Layer level="OVERLAY">
+										  			<FontString name="DeathKnight_Dark_Transformation_Text" inherits="GameFontNormal" text="DeathKnight_Dark_Transformation_Name" justifyV="TOP" justifyH="LEFT">
+										  				<Size>
+										  					<AbsDimension x="160" y="20" />
+										  				</Size>
+										  				<Anchors>
+										  					<Anchor point="TOPLEFT">
+										  						<Offset x="325" y="-187" />
+										  					</Anchor>
+										  				</Anchors>
+										  					<Color r="1" g="1" b="1" />
+										  			</FontString>
+										  		</Layer>
+										  		<!-- ################################################################## -->
+										  		<!-- ################################################################## -->
+										        	<!-- SUMMON GARGOYLE TEXT -->
+										  		<Layer level="OVERLAY">
+										  			<FontString name="DeathKnight_Summon_Gargoyle_Text" inherits="GameFontNormal" text="DeathKnight_Summon_Gargoyle_Name" justifyV="TOP" justifyH="LEFT">
+										  				<Size>
+										  					<AbsDimension x="160" y="20" />
+										  				</Size>
+										  				<Anchors>
+										  					<Anchor point="TOPLEFT">
+										  						<Offset x="325" y="-427" />
+										  					</Anchor>
+										  				</Anchors>
+										  					<Color r="1" g="1" b="1" />
+										  			</FontString>
+										  		</Layer>
+												<!-- DEFILE TEXT -->
+										  		<Layer level="OVERLAY">
+										  			<FontString name="DeathKnight_Defile_Text" inherits="GameFontNormal" text="DeathKnight_Defile" justifyV="TOP" justifyH="LEFT">
+										  				<Size>
+										  					<AbsDimension x="160" y="20" />
+										  				</Size>
+										  				<Anchors>
+										  					<Anchor point="TOPLEFT">
+										  						<Offset x="325" y="-247" />
+										  					</Anchor>
+										  				</Anchors>
+										  					<Color r="1" g="1" b="1" />
+										  			</FontString>
+										  		</Layer>
+												<!-- APOCALYPSE TEXT -->
+										  		<Layer level="OVERLAY">
+										  			<FontString name="DeathKnight_Apocalypse_Text" inherits="GameFontNormal" text="DeathKnight_Apocalypse" justifyV="TOP" justifyH="LEFT">
+										  				<Size>
+										  					<AbsDimension x="160" y="20" />
+										  				</Size>
+										  				<Anchors>
+										  					<Anchor point="TOPLEFT">
+										  						<Offset x="325" y="-217" />
+										  					</Anchor>
+										  				</Anchors>
+										  					<Color r="1" g="1" b="1" />
+										  			</FontString>
+										  		</Layer>
+												<!--   CHAINS OF ICE TEXT -->
+										  		<Layer level="OVERLAY">
+										  			<FontString name="DeathKnight_Chains_of_Ice_Text" inherits="GameFontNormal" text="DeathKnight_Chains_of_Ice" justifyV="TOP" justifyH="LEFT">
+										  				<Size>
+										  					<AbsDimension x="160" y="20" />
+										  				</Size>
+										  				<Anchors>
+										  					<Anchor point="TOPLEFT">
+										  						<Offset x="125" y="-367" />
+										  					</Anchor>
+										  				</Anchors>
+										  					<Color r="1" g="1" b="1" />
+										  			</FontString>
+										  		</Layer>
+												<!--PATH OF FROST TEXT -->
+										  		<Layer level="OVERLAY">
+										  			<FontString name="DeathKnight_Path_of_Frost_Text" inherits="GameFontNormal" text="DeathKnight_Path_of_Frost_Name" justifyV="TOP" justifyH="LEFT">
+										  				<Size>
+										  					<AbsDimension x="160" y="20" />
+										  				</Size>
+										  				<Anchors>
+										  					<Anchor point="TOPLEFT">
+										  						<Offset x="525" y="-247" />
+										  					</Anchor>
+										  				</Anchors>
+										  					<Color r="1" g="1" b="1" />
+										  			</FontString>
+										  		</Layer>
+												<!-- PILLAR OF FROST TEXT -->
+										  		<Layer level="OVERLAY">
+										  			<FontString name="DeathKnight_Pillar_of_Frost_Text" inherits="GameFontNormal" text="DeathKnight_Pillar_of_Frost_Name" justifyV="TOP" justifyH="LEFT">
+										  				<Size>
+										  					<AbsDimension x="160" y="20" />
+										  				</Size>
+										  				<Anchors>
+										  					<Anchor point="TOPLEFT">
+										  						<Offset x="325" y="-457" />
+										  					</Anchor>
+										  				</Anchors>
+										  					<Color r="1" g="1" b="1" />
+										  			</FontString>
+										  		</Layer>
+												<!-- BLOOD BOIL TEXT -->
+										  		<Layer level="OVERLAY">
+										  			<FontString name="DeathKnight_Blood_Boil_Text" inherits="GameFontNormal" text="DeathKnight_Blood_Boil" justifyV="TOP" justifyH="LEFT">
+										  				<Size>
+										  					<AbsDimension x="160" y="20" />
+										  				</Size>
+										  				<Anchors>
+										  					<Anchor point="TOPLEFT">
+										  						<Offset x="125" y="-307" />
+										  					</Anchor>
+										  				</Anchors>
+										  					<Color r="1" g="1" b="1" />
+										  			</FontString>
+										  		</Layer>
+												<!--HOWLING_BLAST TEXT -->
+										  		<Layer level="OVERLAY">
+										  			<FontString name="DeathKnight_Howling_Blast_Text" inherits="GameFontNormal" text="DeathKnight_Howling_Blast_Name" justifyV="TOP" justifyH="LEFT">
+										  				<Size>
+										  					<AbsDimension x="160" y="20" />
+										  				</Size>
+										  				<Anchors>
+										  					<Anchor point="TOPLEFT">
+										  						<Offset x="525" y="-277" />
+										  					</Anchor>
+										  				</Anchors>
+										  					<Color r="1" g="1" b="1" />
+										  			</FontString>
+										  		</Layer>
+												<!-- Tank DANCING RUNE WEAPON TEXT -->
+										  		<Layer level="OVERLAY">
+										  			<FontString name="DeathKnight_Dancing_Rune_Weapon_Text" inherits="GameFontNormal" text="DeathKnight_Dancing_Rune_Weapon_Name" justifyV="TOP" justifyH="LEFT">
+										  				<Size>
+										  					<AbsDimension x="160" y="20" />
+										  				</Size>
+										  				<Anchors>
+										  					<Anchor point="TOPLEFT">
+										  						<Offset x="125" y="-337" />
+										  					</Anchor>
+										  				</Anchors>
+										  					<Color r="1" g="1" b="1" />
+										  			</FontString>
+										  		</Layer>
+												
+												<!--REMORSELESS WINTER TEXT -->
+										  		<Layer level="OVERLAY">
+										  			<FontString name="DeathKnight_Remorseless_Winter_Text" inherits="GameFontNormal" text="DeathKnight_Remorseless_Winter_Name" justifyV="TOP" justifyH="LEFT">
+										  				<Size>
+										  					<AbsDimension x="160" y="20" />
+										  				</Size>
+										  				<Anchors>
+										  					<Anchor point="TOPLEFT">
+										  						<Offset x="525" y="-307" />
+										  					</Anchor>
+										  				</Anchors>
+										  					<Color r="1" g="1" b="1" />
+										  			</FontString>
+										  		</Layer>
+												<!-- DEATH PACT TEXT -->
+										  		<Layer level="OVERLAY">
+										  			<FontString name="DeathKnight_Death_Pact_Text" inherits="GameFontNormal" text="DeathKnight_Death_Pact_Name" justifyV="TOP" justifyH="LEFT">
+										  				<Size>
+										  					<AbsDimension x="160" y="20" />
+										  				</Size>
+										  				<Anchors>
+										  					<Anchor point="TOPLEFT">
+										  					<Offset x="525" y="-337" />
+										  					</Anchor>
+										  				</Anchors>
+										  					<Color r="1" g="1" b="1" />
+										  			</FontString>
+										  		</Layer>
+												<!-- MARROWREND TEXT -->
+										  		<Layer level="OVERLAY">
+										  			<FontString name="DeathKnight_Marrowrend_Text" inherits="GameFontNormal" text="DeathKnight_Marrowrend_Name" justifyV="TOP" justifyH="LEFT">
+										  				<Size>
+										  					<AbsDimension x="160" y="20" />
+										  				</Size>
+										  				<Anchors>
+										  					<Anchor point="TOPLEFT">
+										  						<Offset x="525" y="-367" />
+										  					</Anchor>
+										  				</Anchors>
+										  					<Color r="1" g="1" b="1" />
+										  			</FontString>
+										  		</Layer>
+												<!-- Corpse_Exploder TEXT -->
+										  		<Layer level="OVERLAY">
+										  			<FontString name="DeathKnight_Corpse_Exploder_Text" inherits="GameFontNormal" text="DeathKnight_Corpse_Exploder_Name" justifyV="TOP" justifyH="LEFT">
+										  				<Size>
+										  					<AbsDimension x="160" y="20" />
+										  				</Size>
+										  				<Anchors>
+										  					<Anchor point="TOPLEFT">
+										  						<Offset x="525" y="-397" />
+										  					</Anchor>
+										  				</Anchors>
+										  					<Color r="1" g="1" b="1" />
+										  			</FontString>
+										  		</Layer>
+												<!-- Deaths_Advance TEXT -->
+										  		<Layer level="OVERLAY">
+										  			<FontString name="DeathKnight_Deaths_Advance_Text" inherits="GameFontNormal" text="DeathKnight_Deaths_Advance_Name" justifyV="TOP" justifyH="LEFT">
+										  				<Size>
+										  					<AbsDimension x="160" y="20" />
+										  				</Size>
+										  				<Anchors>
+										  					<Anchor point="TOPLEFT">
+										  						<Offset x="525" y="-427" />
+										  					</Anchor>
+										  				</Anchors>
+										  					<Color r="1" g="1" b="1" />
+										  			</FontString>
+										  		</Layer>
+												<!-- Sacrificial_Pact TEXT -->
+										  		<Layer level="OVERLAY">
+										  			<FontString name="DeathKnight_Sacrificial_Pact_Text" inherits="GameFontNormal" text="DeathKnight_Sacrificial_Pact_Name" justifyV="TOP" justifyH="LEFT">
+										  				<Size>
+										  					<AbsDimension x="160" y="20" />
+										  				</Size>
+										  				<Anchors>
+										  					<Anchor point="TOPLEFT">
+										  						<Offset x="525" y="-457" />
+										  					</Anchor>
+										  				</Anchors>
+										  					<Color r="1" g="1" b="1" />
+										  			</FontString>
+										  		</Layer>
+												<!-- Lichborne TEXT -->
+										  		<Layer level="OVERLAY">
+										  			<FontString name="DeathKnight_Lichborne_Text" inherits="GameFontNormal" text="DeathKnight_Lichborne_Name" justifyV="TOP" justifyH="LEFT">
+										  				<Size>
+										  					<AbsDimension x="160" y="20" />
+										  				</Size>
+										  				<Anchors>
+										  					<Anchor point="TOPLEFT">
+										  						<Offset x="695" y="-185" />
+										  					</Anchor>
+										  				</Anchors>
+										  					<Color r="1" g="1" b="1" />
+										  			</FontString>
+										  		</Layer>
+												<!-- Acherus_Deathcharger TEXT -->
+										  		<Layer level="OVERLAY">
+										  			<FontString name="DeathKnight_Acherus_Deathcharger_Text" inherits="GameFontNormal" text="DeathKnight_Acherus_Deathcharger_Name" justifyV="TOP" justifyH="LEFT">
+										  				<Size>
+										  					<AbsDimension x="160" y="20" />
+										  				</Size>
+										  				<Anchors>
+										  					<Anchor point="TOPLEFT">
+										  						<Offset x="695" y="-215" />
+										  					</Anchor>
+										  				</Anchors>
+										  					<Color r="1" g="1" b="1" />
+										  			</FontString>
+										  		</Layer>
+												<!-- Unholy_Blight TEXT -->
+										  		<Layer level="OVERLAY">
+										  			<FontString name="DeathKnight_Unholy_Blight_Text" inherits="GameFontNormal" text="DeathKnight_Unholy_Blight_Name" justifyV="TOP" justifyH="LEFT">
+										  				<Size>
+										  					<AbsDimension x="160" y="20" />
+										  				</Size>
+										  				<Anchors>
+										  					<Anchor point="TOPLEFT">
+										  						<Offset x="695" y="-245" />
+										  					</Anchor>
+										  				</Anchors>
+										  					<Color r="1" g="1" b="1" />
+										  			</FontString>
+										  		</Layer>
+												<!-- DEATH GATE TEXT -->
+										  		<Layer level="OVERLAY">
+										  			<FontString name="DeathKnight_Death_Gate_Text" inherits="GameFontNormal" text="DeathKnight_Death_Gate_Name" justifyV="TOP" justifyH="LEFT">
+										  				<Size>
+										  					<AbsDimension x="180" y="20" />
+										  				</Size>
+										  				<Anchors>
+										  					<Anchor point="TOPLEFT">
+										  						<Offset x="525" y="-187" />
+										  					</Anchor>
+										  				</Anchors>
+										  					<Color r="1" g="1" b="1" />
+										  			</FontString>
+										  		</Layer>
+												<!-- DEATH STRIKE TEXT -->
+										  		<Layer level="OVERLAY">
+										  			<FontString name="DeathKnight_Death_Strike_Text" inherits="GameFontNormal" text="DeathKnight_Death_Strike_Name" justifyV="TOP" justifyH="LEFT">
+										  				<Size>
+										  					<AbsDimension x="180" y="20" />
+										  				</Size>
+										  				<Anchors>
+										  					<Anchor point="TOPLEFT">
+										  						<Offset x="525" y="-217" />
+										  					</Anchor>
+										  				</Anchors>
+										  					<Color r="1" g="1" b="1" />
+										  			</FontString>
+										  		</Layer>
+												
+												
+												 
+										  		<!-- ################################################################## -->
+										  		<!-- ################################################################## -->
+										  		<!-- ################################################################## -->
+										  		<!-- ################################################################## -->
+										        
+										</Layers>
+						  </Frame>
+
+		<!-- ################################################################## -->
+		<!-- ################################################################## -->
+		<!-- ################################################################## -->
+		<!-- ################################################################## -->
+		<!-- ################################################################## -->
+		<!-- ################################################################## -->
+		<!-- ################################################################## -->
+		<!-- ################################################################## -->
+		<!-- ################################################################## -->
+		<!-- ################################################################## -->
+		<!-- ################################################################## -->
+		<!-- ################################################################## -->
+		<!-- ################################################################## -->
+		<!-- ################################################################## -->
+		<!-- ################################################################## -->
+		<!-- ################################################################## -->
+		<!-- ################################################################## -->
+		<!-- ################################################################## -->
+		<!-- ################################################################## -->
+		<!-- ################################################################## -->
+		<!-- ################################################################## -->
+
+						   <!-- DEATH KNIGHT PAGE 2 -->
+						  <Frame name="GoH_DeathKnight_Frame_Page2" hidden="true">
+										<Size>
+										  <AbsDimension x="1024" y="1024" />
+										</Size>
+										<Anchors>
+										  <Anchor point="TOPLEFT">
+											<Offset>
+											  <AbsDimension x="3" y="-3" />
+											</Offset>
+										  </Anchor>
+										</Anchors>
+										<Frames>
+
+												  <!-- ################################################################## -->
+												  <!-- ################################################################## -->
+												  <!-- ################################################################## -->
+												  <!-- PUT YOUR NEW HUNTER SPELL ICON BUTTONS FOR TAB 2 IN HERE CRAIG -->
+												  <!-- ################################################################## -->
+												  <!-- ################################################################## -->
+												  <!-- ################################################################## -->
+
+                                                  
+
+												  <!-- ################################################################## -->
+												   
+												  
+												  
+												 
+												  
+												  
+												  
+												  
+												  
+												   
+												  
+												  
+												  
+												  
+												   
+												   
+												  <!-- ################################################################## -->
+												  <!-- ################################################################## -->
+
+										</Frames>
+										<Layers>
+										  <Layer level="BACKGROUND">
+											<Texture name="$parentTexture" setAllPoints="true" file="interface\AddOns\GoH\Images\GoH_v5_BackGround_DeathKnight_Page2">
+											  <TexCoords left="0" right="1" top="0" bottom="1" />
+											</Texture>
+										  </Layer>
+
+												  <!-- ################################################################## -->
+												  <!-- ################################################################## -->
+												  <!-- ################################################################## -->
+												  <!-- PUT YOUR NEW DEATHKNIGHT SPELL TEXT LAYERS FOR TAB 2 IN HERE CRAIG -->
+												  <!-- ################################################################## -->
+												  <!-- ################################################################## -->
+												  <!-- ################################################################## -->#
+
+                                                 
+												 
+												 
+												 <!-- ################################################################## -->
+										  		<!-- ################################################################## -->
+										         <!-- ################################################################## -->
+										  		<!-- ################################################################## -->
+                                               
+												
+												
+												
+												
+												
+												
+												
+												
+
+                                                <!-- ################################################################## -->
+										  		<!-- ################################################################## -->
+
+										</Layers>
+						  </Frame>
+
+		<!-- ################################################################## -->
+		<!-- ################################################################## -->
+		<!-- ################################################################## -->
+		<!-- ################################################################## -->
+		<!-- ################################################################## -->
+		<!-- ################################################################## -->
+		<!-- ################################################################## -->
+		<!-- ################################################################## -->
+		<!-- ################################################################## -->
+		<!-- ################################################################## -->
+		<!-- ################################################################## -->
+		<!-- ################################################################## -->
+		<!-- ################################################################## -->
+		<!-- ################################################################## -->
+		<!-- ################################################################## -->
+		<!-- ################################################################## -->
+		<!-- ################################################################## -->
+		<!-- ################################################################## -->
+		<!-- ################################################################## -->
+		<!-- ################################################################## -->
+		<!-- ################################################################## -->
+
+						   <!-- DEATH KNIGHT PAGE 3 -->
+						  <Frame name="GoH_DeathKnight_Frame_Page3" hidden="true">
+										<Size>
+										  <AbsDimension x="1024" y="1024" />
+										</Size>
+										<Anchors>
+										  <Anchor point="TOPLEFT">
+											<Offset>
+											  <AbsDimension x="3" y="-3" />
+											</Offset>
+										  </Anchor>
+										</Anchors>
+										<Frames>
+
+												  <!-- ################################################################## -->
+												  <!-- ################################################################## -->
+												  <!-- ################################################################## -->
+												  <!-- PUT YOUR NEW DEATHKNIGHT SPELL ICON BUTTONS FOR TAB 3 IN HERE CRAIG -->
+												  <!-- ################################################################## -->
+												  <!-- ################################################################## -->
+												  <!-- ################################################################## -->
+
+										</Frames>
+										<Layers>
+										  <Layer level="BACKGROUND">
+											<Texture name="$parentTexture" setAllPoints="true" file="interface\AddOns\GoH\Images\GoH_v5_BackGround_DeathKnight_Page2">
+											  <TexCoords left="0" right="1" top="0" bottom="1" />
+											</Texture>
+										  </Layer>
+
+												  <!-- ################################################################## -->
+												  <!-- ################################################################## -->
+												  <!-- ################################################################## -->
+												  <!-- PUT YOUR NEW DEATHKNIGHT SPELL TEXT LAYERS FOR TAB 3 IN HERE CRAIG -->
+												  <!-- ################################################################## -->
+												  <!-- ################################################################## -->
+												  <!-- ################################################################## -->
+
+										</Layers>
+						  </Frame>
+
+
+    </Frames>
+  </Frame>
+
+						  <!-- ################################################################## -->
+						  <!-- ################################################################## -->
+						  <!-- ################################################################## -->
+						  <!-- ################################################################## -->
+						  <!-- ################################################################## -->
+						  <!-- ################################################################## -->
+						  <!-- ################################################################## -->
+						  <!-- ################################################################## -->
+						  <!-- ################################################################## -->
+						  <!-- ################################################################## -->
+						  <!-- ################################################################## -->
+						  <!-- ################################################################## -->
+						  <!-- ################################################################## -->
+						  <!-- ################################################################## -->
+						  <!-- ################################################################## -->
+						  <!-- ################################################################## -->
+
+  <!-- MINIMAP BUTTON -->
+	<Button name="GoH_MinimapButton" parent="Minimap" enableMouse="true" movable="true"  frameStrata="HIGH" hidden="false">
+		<Size>
+			<AbsDimension x="33" y="33"/>
+		</Size>
+		<Anchors>
+			<Anchor point="TOPLEFT"/>
+		</Anchors>
+		<Layers>
+			<Layer level="BACKGROUND">
+				<Texture name="GoH_MinimapButton_Icon" file="Interface\AddOns\GoH\GoH_Icon">
+					<Size>
+						<AbsDimension x="21" y="21"/>
+					</Size>
+					<Anchors>
+						<Anchor point="TOPLEFT">
+							<Offset>
+								<AbsDimension x="7" y="-6"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+			</Layer>
+			<Layer level="OVERLAY">
+				<Texture file="Interface\Minimap\MiniMap-TrackingBorder">
+					<Size>
+						<AbsDimension x="56" y="56"/>
+					</Size>
+					<Anchors>
+						<Anchor point="TOPLEFT"/>
+					</Anchors>
+				</Texture>
+			</Layer>
+		</Layers>
+		<Frames>
+			<Frame name="GoH_MinimapButton_DraggingFrame" hidden="true">
+				<Scripts>
+					<OnUpdate>
+						GoH_MinimapButton_DraggingFrame_OnUpdate()
+					</OnUpdate>
+				</Scripts>
+			</Frame>
+		</Frames>
+		<HighlightTexture alphaMode="ADD" file="Interface\Minimap\UI-Minimap-ZoomButton-Highlight"/>
+		<Scripts>
+			<OnLoad>
+				self:RegisterForClicks("LeftButtonUp","RightButtonUp")
+				self:RegisterForDrag("LeftButton","RightButton")
+			</OnLoad>
+			<OnEnter>
+				if (not self.dragging) then
+					GoH_MinimapButton_OnEnter(self); 
+				end
+				GoH_DeathKnight_Form:EnableMouseWheel(true)
+			</OnEnter>
+			<OnLeave>
+				GameTooltip:Hide()
+			</OnLeave>
+			<OnDragStart>
+				self.dragging = true
+				GameTooltip:Hide()
+				self:LockHighlight()
+				GoH_MinimapButton_DraggingFrame:Show()
+			</OnDragStart>
+			<OnDragStop>
+				self.dragging = false
+				self:UnlockHighlight()
+				GoH_MinimapButton_DraggingFrame:Hide()
+			</OnDragStop>
+			<OnClick>
+				if GetMouseButtonClicked() == "LeftButton" then
+					GoH_DeathKnight_MINIMAP_TOGGLE();
+				elseif GetMouseButtonClicked() == "RightButton" then
+					GoH_Settings_MINIMAP_TOGGLE();
+				end
+			</OnClick>
+		</Scripts>
+	</Button>
+
+</Ui>

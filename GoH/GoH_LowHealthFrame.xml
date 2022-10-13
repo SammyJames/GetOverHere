@@ -1,0 +1,73 @@
+<Ui xmlns="http://www.blizzard.com/wow/ui" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+<!-- LOW HEALTH JUNK FRAME -->
+  <Frame name="GoH4_LowHealthWarning_Pulser_JunkFrame" parent="UIParent" setAllPoints="true" hidden="false" enableMouse="false">
+		<Scripts>
+			<OnUpdate>
+				GoH4_LowHealthWarning_Pulser_OnUpdate();
+			</OnUpdate>
+		</Scripts>
+  </Frame>
+
+
+
+<!-- LOW HEALTH EXAMPLE -->
+  <Frame name="HealthExampleFrame" parent="WorldFrame" setAllPoints="true"  hidden="true">
+    <Layers>
+      <Layer level="BACKGROUND">
+        <Texture name="$parentTexture" file="Interface\FullScreenTextures\LowHealth" alphaMode="ADD" />
+      </Layer>
+    </Layers>
+  </Frame>
+
+<!-- LOW MANA EXAMPLE -->
+  <Frame name="ManaExampleFrame" parent="WorldFrame" setAllPoints="true"  hidden="true">
+    <Layers>
+      <Layer level="BACKGROUND">
+        <Texture name="$parentTexture" file="Interface\FullScreenTextures\OutOfControl" alphaMode="ADD" />
+      </Layer>
+    </Layers>
+  </Frame>
+
+
+<!-- LOW HEALTH EXAMPLE 2 -->
+  <Frame name="HealthExampleFrame2" parent="WorldFrame" setAllPoints="true"  hidden="true">
+    <Layers>
+      <Layer level="BACKGROUND">
+        <Texture name="$parentTexture" file="Interface\FullScreenTextures\LowHealth" alphaMode="ADD" />
+      </Layer>
+    </Layers>
+  </Frame>
+
+<!-- LOW MANA EXAMPLE 2 -->
+  <Frame name="ManaExampleFrame2" parent="WorldFrame" setAllPoints="true"  hidden="true">
+    <Layers>
+      <Layer level="BACKGROUND">
+        <Texture name="$parentTexture" file="Interface\FullScreenTextures\OutOfControl" alphaMode="ADD" />
+      </Layer>
+    </Layers>
+  </Frame>
+
+
+
+
+<!-- LOW HEALTH (BLIZZARDS OUT LOWHEALTH) FRAME -->
+  <Frame name="GoH4_LowHealthWarning_Pulser_LowHealthFrame" parent="UIParent" setAllPoints="true" hidden="true" enableMouse="false">
+		<Layers>
+			<Layer level="BACKGROUND">
+				<Texture file="Interface\FullScreenTextures\LowHealth" alphaMode="ADD"/>
+			</Layer>
+		</Layers>
+  </Frame>
+
+
+<!-- LOW MANA (BLIZZARDS OUT OF CONTROL) FRAME -->
+  <Frame name="GoH4_LowHealthWarning_Pulser_OutOfControlFrame" parent="UIParent" setAllPoints="true" hidden="true" enableMouse="false">
+		<Layers>
+			<Layer level="BACKGROUND">
+				<Texture file="Interface\FullScreenTextures\OutOfControl" alphaMode="ADD"/>
+			</Layer>
+		</Layers>
+  </Frame>
+
+</Ui>
